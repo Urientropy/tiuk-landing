@@ -490,6 +490,12 @@ h3 {
   .navegacion__enlace:hover {
     color: var(--turquesa);
   }
+
+  .cabecera {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: var(--azul-noche);
+  }
 }
 
 @media (min-width: 900px) {
@@ -1351,15 +1357,16 @@ html.js .historia__paso.activo {
 }
 
 .cifra {
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: baseline;
+  align-content: flex-start;
   column-gap: 0.1em;
 }
 
 .cifra__etiqueta {
-  grid-column: 1 / -1;
+  flex-basis: 100%;
 }
 
 .cifra__numero {
@@ -1369,6 +1376,7 @@ html.js .historia__paso.activo {
   line-height: 1;
   color: var(--turquesa);
   display: inline-block;
+  white-space: nowrap;
 }
 
 .cifra__sufijo {
@@ -1377,6 +1385,7 @@ html.js .historia__paso.activo {
   font-size: clamp(2rem, 4vw, 3rem);
   color: var(--turquesa);
   margin-left: 2px;
+  white-space: nowrap;
 }
 
 .cifra__etiqueta {
@@ -1386,6 +1395,22 @@ html.js .historia__paso.activo {
   color: var(--pizarra-clara);
   margin-top: 0.5rem;
   text-transform: lowercase;
+}
+
+@media (max-width: 599px) {
+  .cifras {
+    padding: 1.5rem 1rem;
+    gap: 0.5rem;
+    align-items: start;
+  }
+
+  .cifra__numero {
+    font-size: clamp(1.75rem, 8vw, 3rem);
+  }
+
+  .cifra__sufijo {
+    font-size: clamp(1rem, 4.5vw, 1.75rem);
+  }
 }
 
 /* --------------------------------------------------------------------------
