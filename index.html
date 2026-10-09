@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TIUK — Aprender se siente como jugar</title>
   <meta name="description" content="TIUK es la plataforma educativa gamificada que convierte cualquier materia en una aventura RPG. Aprende con Profe Tuki, sin conexión a internet y en tres idiomas: Español, English y Miskito.">
-  <meta name="theme-color" content="#32CD32">
+  <meta name="theme-color" content="#0F172A">
 
   <!-- Open Graph -->
   <meta property="og:title" content="TIUK — Aprender se siente como jugar">
@@ -34,7 +34,7 @@
   <header class="cabecera">
     <div class="contenedor cabecera__contenedor">
       <a class="cabecera__marca" href="#inicio" aria-label="TIUK - Volver al inicio">
-        <img src="assets/marca/wordmark.svg" alt="TIUK" width="1698" height="926">
+        <img src="assets/marca/wordmark-negativo.svg" alt="TIUK" width="782" height="269">
       </a>
 
       <button class="cabecera__menu" aria-expanded="false" aria-controls="navegacion" aria-label="Abrir menú" type="button">
@@ -102,7 +102,7 @@
           <h2 class="seccion__titulo">¿Qué es TIUK?</h2>
         </div>
 
-        <div class="que-es__bloque revelar">
+        <div class="que-es__bloque tarjeta revelar">
           <div class="que-es__texto">
             <p>
               TIUK es una plataforma de aprendizaje gamificado que toma las mecánicas más adictivas y motivadoras de los videojuegos y las pone al servicio de la educación. Con una dinámica ágil inspirada en Duolingo y en los juegos de rol clásicos, los estudiantes avanzan por un mapa de islas resolviendo puzles didácticos y respondiendo a contrarreloj para salvar mundos de conocimiento.
@@ -194,7 +194,7 @@
         </div>
 
         <div class="rejilla-caracteristicas">
-          <article class="tarjeta caracteristica caracteristica--verde revelar">
+          <article class="tarjeta caracteristica caracteristica--esmeralda revelar">
             <div class="caracteristica__icono" aria-hidden="true">🎙️</div>
             <h3>Profe Tuki con voz</h3>
             <p>
@@ -210,7 +210,7 @@
             </p>
           </article>
 
-          <article class="tarjeta caracteristica caracteristica--ambar revelar">
+          <article class="tarjeta caracteristica caracteristica--mango revelar">
             <div class="caracteristica__icono" aria-hidden="true">⚡</div>
             <h3>XP, rachas y logros</h3>
             <p>
@@ -226,7 +226,7 @@
             </p>
           </article>
 
-          <article class="tarjeta caracteristica caracteristica--verde revelar">
+          <article class="tarjeta caracteristica caracteristica--celeste revelar">
             <div class="caracteristica__icono" aria-hidden="true">🌎</div>
             <h3>Tres idiomas</h3>
             <p>
@@ -234,7 +234,7 @@
             </p>
           </article>
 
-          <article class="tarjeta caracteristica caracteristica--turquesa revelar">
+          <article class="tarjeta caracteristica caracteristica--violeta revelar">
             <div class="caracteristica__icono" aria-hidden="true">🧠</div>
             <h3>IA en tu dispositivo</h3>
             <p>
@@ -284,12 +284,20 @@
         </div>
 
         <div class="rejilla-apps">
-          <article class="tarjeta app revelar">
+          <article class="tarjeta app app--estudiante revelar">
             <div class="app__cabecera">
-              <span class="etiqueta">Android</span>
+              <div class="app__insignias">
+                <span class="etiqueta">Android</span>
+                <span class="app__tema-tag">Aventura RPG</span>
+              </div>
               <h3 class="app__titulo">App Estudiante</h3>
             </div>
-            <img class="app__imagen" src="assets/img/tuki-determinado.webp" alt="Tuki en pose determinada con capa para la App Estudiante" width="720" height="720" loading="lazy" decoding="async">
+            <div class="app__visual">
+              <div class="app__icono-marco">
+                <img class="app__icono-oficial" src="assets/marca/icono-estudiante.svg" alt="Escudo oficial de la App Estudiante TIUK" width="575" height="641" loading="lazy" decoding="async">
+              </div>
+              <img class="app__imagen" src="assets/img/tuki-determinado.webp" alt="Tuki en pose determinada con capa para la App Estudiante" width="720" height="720" loading="lazy" decoding="async">
+            </div>
             <p class="app__descripcion">
               La aventura RPG donde el estudiante vive cada lección como un reto épico, gana medallas y aprende a su propio ritmo.
             </p>
@@ -301,12 +309,20 @@
             </ul>
           </article>
 
-          <article class="tarjeta app revelar">
+          <article class="tarjeta app app--docente revelar">
             <div class="app__cabecera">
-              <span class="etiqueta">Android · Windows</span>
+              <div class="app__insignias">
+                <span class="etiqueta">Android · Windows</span>
+                <span class="app__tema-tag">Panel del docente</span>
+              </div>
               <h3 class="app__titulo">App Docente</h3>
             </div>
-            <img class="app__imagen" src="assets/img/ensenando.webp" alt="Tuki enseñando frente a la pizarra para la App Docente" width="560" height="515" loading="lazy" decoding="async">
+            <div class="app__visual">
+              <div class="app__icono-marco">
+                <img class="app__icono-oficial" src="assets/marca/icono-docente.svg" alt="Símbolo oficial de la App Docente TIUK" width="728" height="529" loading="lazy" decoding="async">
+              </div>
+              <img class="app__imagen" src="assets/img/ensenando.webp" alt="Tuki enseñando frente a la pizarra para la App Docente" width="560" height="515" loading="lazy" decoding="async">
+            </div>
             <p class="app__descripcion">
               La central creativa y de control pedagógico para que el educador diseñe actividades fascinantes y supervise el aprendizaje de su grupo.
             </p>
@@ -325,6 +341,7 @@
     <section id="empezar" class="seccion seccion--cta">
       <div class="contenedor">
         <div class="cta-banner tarjeta revelar">
+          <img class="cta-banner__marca-agua" src="assets/marca/simbolo.svg" alt="" aria-hidden="true" width="728" height="529" loading="lazy" decoding="async">
           <div class="cta-banner__visual">
             <img class="cta-banner__imagen" src="assets/img/bien-hecho.webp" alt="Tuki celebrando con pulgar arriba ¡Bien hecho!" width="560" height="545" loading="lazy" decoding="async">
           </div>
@@ -335,7 +352,7 @@
               Transforma la experiencia educativa en tu aula u hogar. Descubre el poder de aprender jugando con TIUK y Profe Tuki, sin importar las barreras de conectividad o idioma.
             </p>
             <div class="cta-banner__acciones">
-              <a href="#inicio" class="boton boton--secundario">Volver arriba</a>
+              <a href="#inicio" class="boton boton--primario">Volver arriba</a>
             </div>
           </div>
         </div>
@@ -347,10 +364,10 @@
   <footer class="pie">
     <div class="contenedor pie__contenedor">
       <div class="pie__marca-envoltorio">
-        <img class="pie__marca" src="assets/marca/wordmark.svg" alt="TIUK" width="1698" height="926" loading="lazy" decoding="async">
+        <img class="pie__marca" src="assets/marca/wordmark-negativo.svg" alt="TIUK" width="782" height="269" loading="lazy" decoding="async">
       </div>
       <p class="pie__lema">TIUK — aprender jugando, en cualquier idioma.</p>
-      <p class="pie__copyright">© 2026 TIUK. Todos los derechos reservados.</p>
+      <p class="pie__copyright">© <span id="anio-actual">2026</span> TIUK. Todos los derechos reservados.</p>
     </div>
   </footer>
 </body>
