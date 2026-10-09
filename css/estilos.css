@@ -463,6 +463,10 @@ p {
   gap: 20px;
 }
 
+.heroe__texto .etiqueta {
+  align-self: flex-start;
+}
+
 .heroe__descripcion {
   font-size: clamp(1.05rem, 1.2vw + 0.4rem, 1.22rem);
   color: var(--gris-oscuro);
