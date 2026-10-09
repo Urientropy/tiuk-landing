@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIUK — Aprender se siente como jugar</title>
+  <meta name="description" content="TIUK es la plataforma educativa gamificada que convierte cualquier materia en una aventura RPG. Aprende con Profe Tuki, sin conexión a internet y en tres idiomas: Español, English y Miskito.">
+  <meta name="theme-color" content="#32CD32">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TIUK — Aprender se siente como jugar">
+  <meta property="og:description" content="Plataforma educativa gamificada tipo RPG aplicable a cualquier materia. Tutor con voz Profe Tuki, modo sin conexión y soporte para Español, English y Miskito.">
+  <meta property="og:image" content="assets/img/saludando.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/marca/simbolo.svg">
+
+  <!-- Google Fonts: Nunito (800, 900) e Inter (400, 600, 700) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Nunito:wght@800;900&display=swap" rel="stylesheet">
+
+  <!-- Estilos principales -->
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <!-- Script diferido -->
+  <script src="js/principal.js" defer></script>
+</head>
+<body>
+  <!-- Enlace accesible de salto al contenido -->
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <!-- Cabecera de navegación fija -->
+  <header class="cabecera">
+    <div class="contenedor cabecera__contenedor">
+      <a class="cabecera__marca" href="#inicio" aria-label="TIUK - Volver al inicio">
+        <img src="assets/marca/wordmark.svg" alt="TIUK" width="1698" height="926">
+      </a>
+
+      <button class="cabecera__menu" aria-expanded="false" aria-controls="navegacion" aria-label="Abrir menú" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="navegacion" class="navegacion" aria-label="Navegación principal">
+        <a href="#que-es" class="navegacion__enlace">¿Qué es?</a>
+        <a href="#como-funciona" class="navegacion__enlace">Cómo funciona</a>
+        <a href="#caracteristicas" class="navegacion__enlace">Características</a>
+        <a href="#tuki" class="navegacion__enlace">Tuki</a>
+        <a href="#apps" class="navegacion__enlace">Apps</a>
+        <a href="#empezar" class="boton boton--primario cabecera__cta">¡Comenzar!</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main id="contenido">
+    <!-- 1. HÉROE -->
+    <section id="inicio" class="seccion seccion--inicio heroe">
+      <div class="contenedor heroe__contenedor">
+        <div class="heroe__rejilla">
+          <div class="heroe__texto">
+            <span class="etiqueta">Plataforma educativa gamificada</span>
+            <h1>Aprender se siente como <span class="resaltado">jugar</span></h1>
+            <p class="heroe__descripcion">
+              TIUK transforma cualquier asignatura escolar en una emocionante aventura RPG. Explora islas de conocimiento, supera desafíos pedagógicos y aprende junto a Profe Tuki, tu tutor interactivo con voz que te guía en cada paso, ¡incluso sin conexión a internet!
+            </p>
+            <div class="heroe__acciones">
+              <a href="#que-es" class="boton boton--primario">Conoce TIUK</a>
+              <button id="boton-saludar" type="button" class="boton boton--secundario">Habla con Tuki</button>
+            </div>
+            <div class="insignias">
+              <span class="insignia">Cualquier materia</span>
+              <span class="insignia">Sin internet</span>
+              <span class="insignia">Español · English · Miskito</span>
+            </div>
+          </div>
+
+          <div class="heroe__visual">
+            <div class="tuki-escena">
+              <div class="burbuja" id="burbuja-tuki" aria-live="polite">
+                <p id="texto-burbuja">¡Hola! Soy Tuki 👋</p>
+              </div>
+              <img id="tuki-animado" class="tuki-escena__tuki" src="assets/img/tuki-idle.webp" alt="Tuki, la mascota de TIUK" width="720" height="720" fetchpriority="high">
+              <div class="tuki-escena__sombra"></div>
+              <span class="chispa chispa--estrella" aria-hidden="true">⭐</span>
+              <span class="chispa chispa--xp" aria-hidden="true">+50 XP</span>
+              <span class="chispa chispa--circulo" aria-hidden="true"></span>
+              <span class="chispa chispa--destello" aria-hidden="true">✨</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. QUÉ ES -->
+    <section id="que-es" class="seccion seccion--que-es">
+      <div class="contenedor">
+        <div class="seccion__cabecera revelar">
+          <span class="etiqueta">Aprender jugando</span>
+          <h2 class="seccion__titulo">¿Qué es TIUK?</h2>
+        </div>
+
+        <div class="que-es__bloque revelar">
+          <div class="que-es__texto">
+            <p>
+              TIUK es una plataforma de aprendizaje gamificado que toma las mecánicas más adictivas y motivadoras de los videojuegos y las pone al servicio de la educación. Con una dinámica ágil inspirada en Duolingo y en los juegos de rol clásicos, los estudiantes avanzan por un mapa de islas resolviendo puzles didácticos y respondiendo a contrarreloj para salvar mundos de conocimiento.
+            </p>
+            <p>
+              A diferencia de las aplicaciones tradicionales limitadas a un solo curso, TIUK no tiene fronteras: los docentes tienen el control total para construir lecciones de cualquier materia mediante un creador intuitivo. Los contenidos cobran vida en tres idiomas con igualdad de condiciones y funcionan plenamente en dispositivos móviles sin necesidad de datos ni wifi.
+            </p>
+
+            <div class="materias-bloque">
+              <span class="materias-bloque__titulo">Aprende cualquier contenido:</span>
+              <ul class="materias" aria-label="Materias aplicables en TIUK">
+                <li class="materia-chip">Matemáticas</li>
+                <li class="materia-chip">Ciencias</li>
+                <li class="materia-chip">Historia</li>
+                <li class="materia-chip">Lenguaje</li>
+                <li class="materia-chip">Idiomas</li>
+                <li class="materia-chip materia-chip--destacado">¡Lo que tu docente cree!</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="que-es__visual">
+            <img class="que-es__imagen" src="assets/img/leyendo.webp" alt="Tuki leyendo atentamente un libro ilustrado" width="560" height="451" loading="lazy" decoding="async">
+          </div>
+        </div>
+
+        <div class="datos">
+          <div class="dato tarjeta revelar">
+            <span class="dato__cifra">3</span>
+            <span class="dato__texto">Idiomas: Español, English y Miskito con voces nativas</span>
+          </div>
+          <div class="dato tarjeta revelar">
+            <span class="dato__cifra">100%</span>
+            <span class="dato__texto">Jugable y adaptable a cualquier currículo educativo</span>
+          </div>
+          <div class="dato tarjeta revelar">
+            <span class="dato__cifra">0</span>
+            <span class="dato__texto">Conexión necesaria para continuar la aventura y aprender</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. CÓMO FUNCIONA -->
+    <section id="como-funciona" class="seccion seccion--como-funciona">
+      <div class="contenedor">
+        <div class="seccion__cabecera revelar">
+          <span class="etiqueta">Flujo simple</span>
+          <h2 class="seccion__titulo">¿Cómo funciona TIUK?</h2>
+        </div>
+
+        <ol class="pasos">
+          <li class="paso tarjeta revelar">
+            <span class="paso__numero">1</span>
+            <img class="paso__imagen" src="assets/img/ensenando.webp" alt="Tuki docente enseñando frente a una pizarra interactiva" width="560" height="515" loading="lazy" decoding="async">
+            <h3>El docente crea</h3>
+            <p>
+              El profesor diseña unidades interactivas, rutas de estudio y desafíos personalizados en el builder para Windows y Android. Define preguntas, puzles y recompensas en cuestión de minutos.
+            </p>
+          </li>
+
+          <li class="paso tarjeta revelar">
+            <span class="paso__numero">2</span>
+            <img class="paso__imagen" src="assets/img/corriendo.webp" alt="Tuki con capa corriendo entusiasmado a la acción" width="560" height="490" loading="lazy" decoding="async">
+            <h3>El estudiante juega</h3>
+            <p>
+              El estudiante recorre islas temáticas en la App Estudiante (Android). Supera batallas pedagógicas con respuestas cronometradas y recibe retroalimentación hablada de Profe Tuki al instante.
+            </p>
+          </li>
+
+          <li class="paso tarjeta revelar">
+            <span class="paso__numero">3</span>
+            <img class="paso__imagen" src="assets/img/subir-nivel.webp" alt="Tuki alzando un trofeo y celebrando haber subido de nivel" width="560" height="416" loading="lazy" decoding="async">
+            <h3>Sube de nivel</h3>
+            <p>
+              Cada lección completada otorga puntos XP, desbloquea logros y fortalece la racha de estudio diaria. Todo el progreso se resguarda en el dispositivo y se sincroniza en línea o mediante código QR.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 4. CARACTERÍSTICAS -->
+    <section id="caracteristicas" class="seccion seccion--caracteristicas">
+      <div class="contenedor">
+        <div class="seccion__cabecera revelar">
+          <span class="etiqueta">Poder pedagógico</span>
+          <h2 class="seccion__titulo">Todo lo que hace único a TIUK</h2>
+        </div>
+
+        <div class="rejilla-caracteristicas">
+          <article class="tarjeta caracteristica caracteristica--verde revelar">
+            <div class="caracteristica__icono" aria-hidden="true">🎙️</div>
+            <h3>Profe Tuki con voz</h3>
+            <p>
+              Un tutor carismático y paciente que explica lecciones con voz clara, felicita aciertos y guía paso a paso cuando hay dudas conceptuales.
+            </p>
+          </article>
+
+          <article class="tarjeta caracteristica caracteristica--turquesa revelar">
+            <div class="caracteristica__icono" aria-hidden="true">🗺️</div>
+            <h3>Aventura RPG</h3>
+            <p>
+              Exploración de mapas por islas, caminos de lecciones progresivos, batallas pedagógicas con golpes cronometrados y puzles desafiantes.
+            </p>
+          </article>
+
+          <article class="tarjeta caracteristica caracteristica--ambar revelar">
+            <div class="caracteristica__icono" aria-hidden="true">⚡</div>
+            <h3>XP, rachas y logros</h3>
+            <p>
+              Gamificación comprobada: acumula experiencia en cada acierto, conserva rachas consecutivas de estudio y desbloquea medallas de maestría.
+            </p>
+          </article>
+
+          <article class="tarjeta caracteristica caracteristica--coral revelar">
+            <div class="caracteristica__icono" aria-hidden="true">📶</div>
+            <h3>Funciona sin internet</h3>
+            <p>
+              Juega y progresa sin cobertura. Al reconectar se sincroniza automáticamente, y en emergencias los resultados y tareas se transfieren por código QR.
+            </p>
+          </article>
+
+          <article class="tarjeta caracteristica caracteristica--verde revelar">
+            <div class="caracteristica__icono" aria-hidden="true">🌎</div>
+            <h3>Tres idiomas</h3>
+            <p>
+              Soporte nativo en Español, English y Miskito con voces reales grabadas y contenidos validados para respaldar la preservación cultural y lingüística.
+            </p>
+          </article>
+
+          <article class="tarjeta caracteristica caracteristica--turquesa revelar">
+            <div class="caracteristica__icono" aria-hidden="true">🧠</div>
+            <h3>IA en tu dispositivo</h3>
+            <p>
+              Inteligencia artificial que corre localmente en el móvil sin depender de la nube ni consumir datos, adaptando las pistas al ritmo de cada alumno.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. TUKI -->
+    <section id="tuki" class="seccion seccion--tuki">
+      <div class="contenedor">
+        <div class="seccion__cabecera revelar">
+          <span class="etiqueta">Tu tutor y mascota</span>
+          <h2 class="seccion__titulo">Conoce a Tuki</h2>
+          <p class="seccion__subtitulo">
+            Tuki es una ranita verde con capa turquesa y una medalla de libro. Es el corazón de TIUK: "Profe Tuki" acompaña a cada estudiante, celebra sus victorias y le anima con entusiasmo en cada desafío.
+          </p>
+        </div>
+
+        <div class="galeria revelar">
+          <div class="galeria__escenario">
+            <img id="tuki-galeria" src="assets/img/saludando.webp" width="560" height="549" alt="Tuki saludando alegremente" loading="lazy" decoding="async">
+            <div class="confeti" id="confeti" aria-hidden="true"></div>
+          </div>
+
+          <div class="galeria__opciones" role="group" aria-label="Cambiar pose o estado de Tuki">
+            <button type="button" class="opcion-pose" data-pose="saludando" data-alto="549" aria-pressed="true">Saluda</button>
+            <button type="button" class="opcion-pose" data-pose="bien-hecho" data-alto="545" aria-pressed="false">¡Bien hecho!</button>
+            <button type="button" class="opcion-pose" data-pose="curioso" data-alto="537" aria-pressed="false">Curioso</button>
+            <button type="button" class="opcion-pose" data-pose="dormido" data-alto="550" aria-pressed="false">Dormido</button>
+            <button type="button" class="opcion-pose" data-pose="cara-osado" data-alto="417" aria-pressed="false">Osado</button>
+            <button type="button" class="opcion-pose" data-pose="cara-asombro" data-alto="467" aria-pressed="false">Asombrado</button>
+            <button type="button" id="boton-celebrar" class="boton boton--primario">¡Celebra!</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. APPS -->
+    <section id="apps" class="seccion seccion--apps">
+      <div class="contenedor">
+        <div class="seccion__cabecera revelar">
+          <span class="etiqueta">Ecosistema TIUK</span>
+          <h2 class="seccion__titulo">Dos aplicaciones, una gran experiencia</h2>
+        </div>
+
+        <div class="rejilla-apps">
+          <article class="tarjeta app revelar">
+            <div class="app__cabecera">
+              <span class="etiqueta">Android</span>
+              <h3 class="app__titulo">App Estudiante</h3>
+            </div>
+            <img class="app__imagen" src="assets/img/tuki-determinado.webp" alt="Tuki en pose determinada con capa para la App Estudiante" width="720" height="720" loading="lazy" decoding="async">
+            <p class="app__descripcion">
+              La aventura RPG donde el estudiante vive cada lección como un reto épico, gana medallas y aprende a su propio ritmo.
+            </p>
+            <ul class="app__beneficios">
+              <li><span class="app__check" aria-hidden="true">✓</span> Camino de lecciones en un mapa con islas, puzles y batallas pedagógicas</li>
+              <li><span class="app__check" aria-hidden="true">✓</span> Tutoría interactiva con Profe Tuki por voz e IA integrada en el móvil</li>
+              <li><span class="app__check" aria-hidden="true">✓</span> Sistema completo de XP, rachas diarias, insignias y niveles</li>
+              <li><span class="app__check" aria-hidden="true">✓</span> Funciona 100% sin conexión con guardado local y rescate de tareas por código QR</li>
+            </ul>
+          </article>
+
+          <article class="tarjeta app revelar">
+            <div class="app__cabecera">
+              <span class="etiqueta">Android · Windows</span>
+              <h3 class="app__titulo">App Docente</h3>
+            </div>
+            <img class="app__imagen" src="assets/img/ensenando.webp" alt="Tuki enseñando frente a la pizarra para la App Docente" width="560" height="515" loading="lazy" decoding="async">
+            <p class="app__descripcion">
+              La central creativa y de control pedagógico para que el educador diseñe actividades fascinantes y supervise el aprendizaje de su grupo.
+            </p>
+            <ul class="app__beneficios">
+              <li><span class="app__check" aria-hidden="true">✓</span> Constructor intuitivo para estructurar lecciones de cualquier asignatura</li>
+              <li><span class="app__check" aria-hidden="true">✓</span> Panel de control detallado para monitorear el progreso de cada estudiante</li>
+              <li><span class="app__check" aria-hidden="true">✓</span> Generación y escaneo de códigos QR para enviar lecciones y recibir notas sin internet</li>
+              <li><span class="app__check" aria-hidden="true">✓</span> Edición y soporte multilingüe en Español, English y Miskito</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. EMPEZAR (CTA) -->
+    <section id="empezar" class="seccion seccion--cta">
+      <div class="contenedor">
+        <div class="cta-banner tarjeta revelar">
+          <div class="cta-banner__visual">
+            <img class="cta-banner__imagen" src="assets/img/bien-hecho.webp" alt="Tuki celebrando con pulgar arriba ¡Bien hecho!" width="560" height="545" loading="lazy" decoding="async">
+          </div>
+          <div class="cta-banner__contenido">
+            <span class="etiqueta cta-banner__etiqueta">¡El juego del conocimiento!</span>
+            <h2 class="seccion__titulo cta-banner__titulo">¿Listo para la aventura?</h2>
+            <p class="cta-banner__texto">
+              Transforma la experiencia educativa en tu aula u hogar. Descubre el poder de aprender jugando con TIUK y Profe Tuki, sin importar las barreras de conectividad o idioma.
+            </p>
+            <div class="cta-banner__acciones">
+              <a href="#inicio" class="boton boton--secundario">Volver arriba</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="pie">
+    <div class="contenedor pie__contenedor">
+      <div class="pie__marca-envoltorio">
+        <img class="pie__marca" src="assets/marca/wordmark.svg" alt="TIUK" width="1698" height="926" loading="lazy" decoding="async">
+      </div>
+      <p class="pie__lema">TIUK — aprender jugando, en cualquier idioma.</p>
+      <p class="pie__copyright">© 2026 TIUK. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
