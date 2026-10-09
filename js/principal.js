@@ -1547,4 +1547,241 @@
     mediaPunteroFino.addListener(alCambiarPunteroFino);
   }
 
+  // ========================================================================
+  // Descarga con verificación de correo
+  // ========================================================================
+  const URL_API_DESCARGAS = 'https://tiuk-descargas.azurewebsites.net';
+
+  const modalDescarga = document.getElementById('modal-descarga');
+  const botonAbrirDescarga = document.getElementById('abrir-descarga');
+  const botonCerrarModal = modalDescarga ? modalDescarga.querySelector('.modal__cerrar') : null;
+  const formCorreo = document.getElementById('form-correo');
+  const formCodigo = document.getElementById('form-codigo');
+  const campoCorreo = document.getElementById('campo-correo');
+  const campoCodigo = document.getElementById('campo-codigo');
+  const botonReenviar = document.getElementById('reenviar-codigo');
+  const estadoModal = document.getElementById('modal-estado');
+
+  let correoGuardado = '';
+  let cooldownFin = 0;
+  let temporizadorCooldown = null;
+
+  function mostrarEstado(mensaje, esError = false) {
+    if (!estadoModal) return;
+    estadoModal.textContent = mensaje || '';
+    if (esError) {
+      estadoModal.classList.add('modal__estado--error');
+    } else {
+      estadoModal.classList.remove('modal__estado--error');
+    }
+  }
+
+  function actualizarBotonReenviar() {
+    if (!botonReenviar) return;
+    const ahora = Date.now();
+    const restantes = Math.ceil((cooldownFin - ahora) / 1000);
+    if (restantes > 0) {
+      botonReenviar.disabled = true;
+      botonReenviar.textContent = `Reenviar código (${restantes}s)`;
+    } else {
+      botonReenviar.disabled = false;
+      botonReenviar.textContent = 'Reenviar código';
+      if (temporizadorCooldown) {
+        clearInterval(temporizadorCooldown);
+        temporizadorCooldown = null;
+      }
+    }
+  }
+
+  function iniciarCooldownReenvio(segundos = 60) {
+    cooldownFin = Date.now() + segundos * 1000;
+    actualizarBotonReenviar();
+    if (temporizadorCooldown) {
+      clearInterval(temporizadorCooldown);
+    }
+    temporizadorCooldown = setInterval(actualizarBotonReenviar, 1000);
+  }
+
+  if (botonAbrirDescarga && modalDescarga) {
+    botonAbrirDescarga.addEventListener('click', () => {
+      mostrarEstado('');
+      if (typeof modalDescarga.showModal === 'function') {
+        modalDescarga.showModal();
+      }
+    });
+  }
+
+  if (botonCerrarModal && modalDescarga) {
+    botonCerrarModal.addEventListener('click', () => {
+      modalDescarga.close();
+    });
+  }
+
+  if (modalDescarga) {
+    modalDescarga.addEventListener('click', (evento) => {
+      if (evento.target !== modalDescarga) return;
+      const rect = modalDescarga.getBoundingClientRect();
+      const clickEnContenido = (
+        rect.top <= evento.clientY &&
+        evento.clientY <= rect.top + rect.height &&
+        rect.left <= evento.clientX &&
+        evento.clientX <= rect.left + rect.width
+      );
+      if (!clickEnContenido) {
+        modalDescarga.close();
+      }
+    });
+  }
+
+  if (formCorreo) {
+    formCorreo.addEventListener('submit', async (evento) => {
+      evento.preventDefault();
+      const correo = campoCorreo ? campoCorreo.value.trim() : '';
+      if (!correo) return;
+
+      mostrarEstado('Enviando…', false);
+
+      const botonSubmit = formCorreo.querySelector('button[type="submit"]');
+      if (botonSubmit) botonSubmit.disabled = true;
+
+      try {
+        const respuesta = await fetch(`${URL_API_DESCARGAS}/solicitar`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ correo })
+        });
+
+        if (respuesta.status === 429) {
+          mostrarEstado('Demasiados intentos, espera un poco', true);
+          return;
+        }
+
+        if (!respuesta.ok) {
+          let detalle = 'Error al enviar el código';
+          try {
+            const datosError = await respuesta.json();
+            if (datosError && datosError.detail) {
+              detalle = typeof datosError.detail === 'string' ? datosError.detail : detalle;
+            }
+          } catch (_) {}
+          mostrarEstado(detalle, true);
+          return;
+        }
+
+        correoGuardado = correo;
+        formCorreo.hidden = true;
+        if (formCodigo) {
+          formCodigo.hidden = false;
+        }
+        mostrarEstado(`Código enviado a ${correo}`, false);
+        if (campoCodigo) {
+          campoCodigo.value = '';
+          campoCodigo.focus();
+        }
+      } catch (error) {
+        mostrarEstado('Error de red. Intenta de nuevo.', true);
+      } finally {
+        if (botonSubmit) botonSubmit.disabled = false;
+      }
+    });
+  }
+
+  if (formCodigo) {
+    formCodigo.addEventListener('submit', async (evento) => {
+      evento.preventDefault();
+      const codigo = campoCodigo ? campoCodigo.value.trim() : '';
+      const correo = correoGuardado || (campoCorreo ? campoCorreo.value.trim() : '');
+
+      if (!correo || !codigo) return;
+
+      const botonSubmit = formCodigo.querySelector('button[type="submit"]');
+      if (botonSubmit) botonSubmit.disabled = true;
+
+      try {
+        const res = await fetch(`${URL_API_DESCARGAS}/verificar`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ correo, codigo })
+        });
+
+        let respuesta = null;
+        try {
+          respuesta = await res.json();
+        } catch (_) {}
+
+        if (res.ok && respuesta && respuesta.url) {
+          mostrarEstado('Descargando…', false);
+          window.location.href = respuesta.url;
+          return;
+        }
+
+        if (res.status === 400 || res.status === 429) {
+          const detail = (respuesta && respuesta.detail)
+            ? (typeof respuesta.detail === 'string' ? respuesta.detail : JSON.stringify(respuesta.detail))
+            : 'Código incorrecto o límite alcanzado';
+          mostrarEstado(detail, true);
+          return;
+        }
+
+        const fallbackDetail = (respuesta && respuesta.detail && typeof respuesta.detail === 'string')
+          ? respuesta.detail
+          : 'Error al verificar el código';
+        mostrarEstado(fallbackDetail, true);
+      } catch (error) {
+        mostrarEstado('Error de red. Intenta de nuevo.', true);
+      } finally {
+        if (botonSubmit) botonSubmit.disabled = false;
+      }
+    });
+  }
+
+  if (botonReenviar) {
+    botonReenviar.addEventListener('click', async () => {
+      if (botonReenviar.disabled) return;
+      const correo = correoGuardado || (campoCorreo ? campoCorreo.value.trim() : '');
+      if (!correo) {
+        mostrarEstado('Ingresa tu correo primero', true);
+        return;
+      }
+
+      iniciarCooldownReenvio(60);
+      mostrarEstado('Enviando…', false);
+
+      try {
+        const respuesta = await fetch(`${URL_API_DESCARGAS}/solicitar`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ correo })
+        });
+
+        if (respuesta.status === 429) {
+          mostrarEstado('Demasiados intentos, espera un poco', true);
+          return;
+        }
+
+        if (!respuesta.ok) {
+          let detalle = 'Error al enviar el código';
+          try {
+            const datosError = await respuesta.json();
+            if (datosError && datosError.detail) {
+              detalle = typeof datosError.detail === 'string' ? datosError.detail : detalle;
+            }
+          } catch (_) {}
+          mostrarEstado(detalle, true);
+          return;
+        }
+
+        mostrarEstado(`Código enviado a ${correo}`, false);
+      } catch (error) {
+        mostrarEstado('Error de red. Intenta de nuevo.', true);
+      }
+    });
+  }
+
 })();

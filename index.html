@@ -361,6 +361,7 @@
                 Funciona sin internet
               </li>
             </ul>
+            <button type="button" class="boton boton--primario magnetico" id="abrir-descarga">Descargar app estudiante</button>
             <img class="app__tuki" src="assets/img/tuki-determinado.webp" alt="" width="720" height="720" data-paralaje="-0.1" loading="lazy" decoding="async">
           </article>
 
@@ -423,5 +424,22 @@
       <p class="pie__copia">© <span id="anio-actual">2026</span> TIUK</p>
     </div>
   </footer>
+  <dialog id="modal-descarga" class="modal" aria-labelledby="modal-titulo">
+    <button type="button" class="modal__cerrar" aria-label="Cerrar">&times;</button>
+    <h2 id="modal-titulo">Descarga TIUK Estudiante</h2>
+    <p>Te enviaremos un código a tu correo para habilitar la descarga.</p>
+    <form id="form-correo">
+      <label for="campo-correo">Correo electrónico</label>
+      <input type="email" id="campo-correo" required autocomplete="email">
+      <button type="submit" class="boton boton--primario">Enviar código</button>
+    </form>
+    <form id="form-codigo" hidden>
+      <label for="campo-codigo">Código de 6 dígitos</label>
+      <input id="campo-codigo" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required autocomplete="one-time-code">
+      <button type="submit" class="boton boton--primario">Verificar y descargar</button>
+      <button type="button" id="reenviar-codigo" class="boton boton--fantasma">Reenviar código</button>
+    </form>
+    <p id="modal-estado" class="modal__estado" role="status" aria-live="polite"></p>
+  </dialog>
 </body>
 </html>
