@@ -14,13 +14,22 @@ tiuk-landing/
 ├── README.md              # Documentación del proyecto
 ├── index.html             # Estructura semántica accesible de la landing
 ├── css/
-│   └── estilos.css        # Hoja de estilos (estilo soft-neobrutalismo mobile-first)
+│   └── estilos.css        # Estilos mobile-first con la identidad visual de TIUK
 ├── js/
 │   └── principal.js       # Lógica vanilla JS: animador de Tuki, menú, scroll y galería
 └── assets/
     ├── img/               # Poses y frames de animación WebP optimizados de Tuki
-    └── marca/             # Símbolo y wordmark vectoriales en formato SVG
+    └── marca/             # Logos oficiales (wordmark, símbolo e iconos de las apps)
 ```
+
+---
+
+## 🎨 Identidad visual
+
+- **Paleta de colores:** Azul noche (`#0F172A`, fondo), pizarra (`#1E293B`, superficies), turquesa (`#2DD4BF`, acento), verde vital (`#32CD32`, acción principal), esmeralda (`#10B981`), mango (`#FFB02A`, XP y premios).
+- **Tipografías:** Nunito (títulos) e Inter (texto).
+- **Componentes:** Tarjetas con sombras suaves y brillos, botones de juego con repisa 3D.
+- **Archivos de `assets/marca/`:** `wordmark-negativo.svg` (fondos oscuros), `wordmark.svg` (fondos claros), `simbolo.svg` (símbolo y favicon), `icono-estudiante.svg` e `icono-docente.svg`, tomados del paquete `ui_core` de la app.
 
 ---
 
