@@ -4,7 +4,7 @@ Revisión local: 27 de octubre de 2026 (America/Managua).
 
 ## Producto y contenido
 
-Se contrastaron las capacidades con los README y el código Flutter de Tiuk y TIUK-All. Los ejemplos educativos son ficticios. La landing distingue las demos de las funciones de la app y explica las condiciones de conectividad. El enlace de exploración usa la página de releases existente; v0.7.0 no tenía instaladores adjuntos y no se fabricaron enlaces de descarga.
+Se contrastaron las capacidades con los README y el código Flutter de Tiuk y TIUK-All. Los ejemplos educativos son ficticios. La landing distingue las demos de las funciones de la app y explica las condiciones de conectividad. Los enlaces públicos de exploración apuntan al repositorio de esta landing. El repositorio de la app Tiuk permanece privado; no se publican enlaces a sus releases ni se inventan descargas.
 
 ## Flujos comprobados en navegador
 

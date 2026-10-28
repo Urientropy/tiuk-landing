@@ -8,7 +8,7 @@ Landing estática en español, rediseñada con fondo claro, verde bosque, superf
 python3 -m http.server 8000
 ```
 
-Abre `http://localhost:8000`. Sirve `index.html`, `css/`, `js/` y `assets/` directamente con GitHub Pages. Este trabajo local no publica ni modifica los repositorios de referencia.
+Abre `http://localhost:8000`. Sirve `index.html`, `css/`, `js/` y `assets/` directamente con GitHub Pages. La landing se publica en [GitHub Pages](https://urientropy.github.io/tiuk-landing/). Los repositorios de las apps de referencia mantienen su configuración independiente.
 
 ## Demos interactivas
 
