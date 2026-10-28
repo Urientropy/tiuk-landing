@@ -143,7 +143,7 @@ p {
   align-items: center;
   justify-content: center;
   gap: 29px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   font-weight: 700;
   transition:
@@ -162,7 +162,7 @@ p {
   line-height: 1;
 }
 .button-small {
-  font-size: 12px;
+  font-size: 14px;
   padding: 11px 16px;
   gap: 20px;
 }
@@ -178,7 +178,7 @@ p {
   display: flex;
   gap: 10px;
   align-items: center;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
 }
 .play-small {
@@ -243,7 +243,7 @@ p {
   gap: 36px;
 }
 .nav a {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   transition: color 0.2s;
 }
@@ -309,7 +309,7 @@ p {
   z-index: -1;
 }
 .hero-copy > p {
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.9;
   max-width: 430px;
   margin: 28px 0 31px;
@@ -328,7 +328,7 @@ p {
   align-items: center;
   gap: 12px;
   margin-top: 35px;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.55;
   color: var(--muted);
 }
@@ -624,7 +624,7 @@ p {
 }
 .section-heading > p {
   max-width: 330px;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.85;
   padding-bottom: 3px;
 }
@@ -648,7 +648,7 @@ p {
   font-size: 33px;
 }
 .adventure-story > p {
-  font-size: 13px;
+  font-size: 18px;
   line-height: 1.9;
   max-width: 310px;
   margin: 24px 0 26px;
@@ -676,17 +676,17 @@ p {
   color: #638051;
 }
 .steps strong {
-  font-size: 11px;
+  font-size: 16px;
   display: block;
 }
 .steps small {
-  font-size: 10px;
+  font-size: 14px;
   color: var(--muted);
   display: block;
   margin-top: 2px;
 }
 .try-note {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--green);
   margin-top: 31px;
   display: flex;
@@ -881,14 +881,14 @@ p {
   border: 0;
   border-bottom: 2px solid transparent;
   color: #b5c1cf;
-  font-size: 8px;
+  font-size: 12px;
 }
 .exercise-tabs button[aria-selected="true"] {
   border-color: #2dd4bf;
   color: #5eead4;
 }
 .question-meta {
-  font-size: 7px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 1.6px;
   color: #a5b4c5;
@@ -920,7 +920,7 @@ p {
   border: 1px solid #475569;
   box-shadow: 0 3px 0 #070c17;
   padding: 10px 12px;
-  font-size: 11px;
+  font-size: 15px;
   text-align: left;
   transition:
     background 0.2s,
@@ -963,7 +963,7 @@ p {
   margin-top: 19px;
 }
 .exercise-footer > span {
-  font-size: 9px;
+  font-size: 12px;
   color: #b7c6d1;
   max-width: 68%;
   line-height: 1.6;
@@ -977,7 +977,7 @@ p {
   padding: 9px 13px;
   font-weight: 700;
   white-space: nowrap;
-  font-size: 10px;
+  font-size: 13px;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -1009,7 +1009,7 @@ p {
   border-radius: 7px;
   padding: 10px 18px;
   box-shadow: 0 3px 0 #070c17;
-  font-size: 11px;
+  font-size: 15px;
 }
 .word-chip.selected {
   border-color: #2dd4bf;
@@ -1032,7 +1032,7 @@ p {
 }
 .sequence button {
   padding: 11px;
-  font-size: 10px;
+  font-size: 14px;
 }
 .sequence .order-index {
   display: inline-grid;
@@ -1051,11 +1051,11 @@ p {
   margin-top: 30px;
 }
 .journey-footnote > p {
-  font-size: 10px;
+  font-size: 12px;
 }
 .journey-footnote > a {
   margin-left: auto;
-  font-size: 10px;
+  font-size: 13px;
   white-space: nowrap;
 }
 .journey-footnote > a > span {
@@ -1079,7 +1079,7 @@ p {
   margin-bottom: 30px;
 }
 .feature-number {
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 700;
   border: 1px solid #bbcdb0;
   display: grid;
@@ -1094,7 +1094,7 @@ p {
   font-size: 28px;
 }
 .feature-intro p {
-  font-size: 12px;
+  font-size: 17px;
   line-height: 1.8;
   max-width: 355px;
   margin-top: 14px;
@@ -1124,13 +1124,13 @@ p {
 }
 .chat-header strong {
   display: block;
-  font-size: 12px;
+  font-size: 16px;
 }
 .chat-header small {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 8px;
+  font-size: 12px;
   color: #58805e;
   margin-top: 2px;
 }
@@ -1158,7 +1158,7 @@ p {
 .message {
   max-width: 88%;
   padding: 13px 15px;
-  font-size: 11px;
+  font-size: 15px;
   line-height: 1.8;
   animation: message-in 0.4s ease;
   flex-shrink: 0;
@@ -1174,7 +1174,7 @@ p {
   color: white;
   border-radius: 13px 2px 13px 13px;
   align-self: flex-end;
-  font-size: 10px;
+  font-size: 15px;
 }
 .message small {
   display: block;
@@ -1195,7 +1195,7 @@ p {
   border-radius: 20px;
   background: #fff;
   padding: 6px 10px;
-  font-size: 8px;
+  font-size: 12px;
   color: #4e7142;
   transition: background 0.2s;
 }
@@ -1218,7 +1218,7 @@ p {
   min-width: 0;
   background: none;
   border: 0;
-  font-size: 10px;
+  font-size: 16px;
   outline: none;
   color: var(--ink);
 }
@@ -1234,7 +1234,7 @@ p {
 }
 .simulation-note {
   display: block;
-  font-size: 7px;
+  font-size: 11px;
   line-height: 1.6;
   color: #71816b;
   text-align: center;
@@ -1332,7 +1332,7 @@ p {
   animation-delay: -0.5s !important;
 }
 .live-state {
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.4px;
   margin-top: 5px;
   color: #59754c;
@@ -1350,7 +1350,7 @@ p {
   z-index: 3;
 }
 .live-content > p {
-  font-size: 12px;
+  font-size: 16px;
   color: #45623d;
   line-height: 1.8;
   max-width: 310px;
@@ -1360,7 +1360,7 @@ p {
   border-color: #c1d0b3;
   color: #35582c;
   padding: 11px 19px;
-  font-size: 10px;
+  font-size: 14px;
   gap: 9px;
   margin: 8px 15px 10px;
   z-index: 3;
@@ -1369,7 +1369,7 @@ p {
   color: white;
 }
 .live-app .simulation-note {
-  font-size: 7px;
+  font-size: 11px;
   max-width: 310px;
   line-height: 1.7;
   margin-top: auto;
@@ -1387,7 +1387,7 @@ p {
   border-radius: 7px;
   padding: 8px 20px;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 14px;
   box-shadow: 0 3px 0 #b5c8a3;
 }
 .live-options button:hover {
@@ -1419,7 +1419,7 @@ p {
   grid-column: 1/-1;
 }
 .teacher-heading > p {
-  font-size: 13px;
+  font-size: 18px;
   line-height: 1.9;
   align-self: end;
   max-width: 390px;
@@ -1530,7 +1530,7 @@ p {
   letter-spacing: -0.8px;
 }
 .studio-title p {
-  font-size: 9px;
+  font-size: 13px;
   margin-top: 6px;
 }
 .generator-layout {
@@ -1553,7 +1553,7 @@ p {
 }
 .generator-form label {
   display: block;
-  font-size: 8px;
+  font-size: 13px;
   font-weight: 700;
   margin-bottom: 7px;
 }
@@ -1562,7 +1562,7 @@ p {
 .generator-form textarea {
   display: block;
   width: 100%;
-  font-size: 9px;
+  font-size: 16px;
   color: #435a3c;
   border: 1px solid #dce4d6;
   border-radius: 6px;
@@ -1581,7 +1581,7 @@ p {
   gap: 12px;
 }
 .generator-info {
-  font-size: 8px;
+  font-size: 13px;
   color: #6e835e;
   line-height: 1.7;
   border-radius: 6px;
@@ -1590,7 +1590,7 @@ p {
   margin: 0 0 18px;
 }
 .generate-button {
-  font-size: 9px;
+  font-size: 14px;
   padding: 12px 13px;
   width: 100%;
   gap: 8px;
@@ -1603,7 +1603,7 @@ p {
 }
 .generator-form .simulation-note {
   padding: 9px 0 0;
-  font-size: 6px;
+  font-size: 11px;
 }
 .lesson-preview {
   background: #f4f7ed;
@@ -1637,7 +1637,7 @@ p {
   font-size: 22px;
 }
 .preview-empty > p {
-  font-size: 9px;
+  font-size: 15px;
   margin-top: 12px;
   line-height: 1.8;
   max-width: 225px;
@@ -1670,7 +1670,7 @@ p {
   justify-content: center;
   flex-direction: column;
   gap: 15px;
-  font-size: 10px;
+  font-size: 14px;
   color: #597a46;
   text-align: center;
 }
@@ -1686,7 +1686,7 @@ p {
   animation: message-in 0.5s ease;
 }
 .lesson-result .result-kicker {
-  font-size: 6px;
+  font-size: 11px;
   letter-spacing: 1.2px;
   color: #658448;
 }
@@ -1696,7 +1696,7 @@ p {
   margin: 9px 0 8px;
 }
 .lesson-result .result-meta {
-  font-size: 7px;
+  font-size: 12px;
   color: #728663;
   border-bottom: 1px solid #dce4d0;
   padding-bottom: 12px;
@@ -1712,19 +1712,19 @@ p {
 }
 .lesson-block > small {
   display: block;
-  font-size: 6px;
+  font-size: 11px;
   letter-spacing: 1px;
   color: #73905e;
   margin-bottom: 4px;
 }
 .lesson-block > p {
-  font-size: 8px;
+  font-size: 14px;
   color: #4b6242;
   line-height: 1.8;
 }
 .lesson-block input,
 .lesson-block textarea {
-  font-size: 9px;
+  font-size: 16px;
   display: block;
   width: 100%;
   padding: 5px;
@@ -1733,7 +1733,7 @@ p {
   color: #3b5332;
 }
 .lesson-block label {
-  font-size: 7px;
+  font-size: 12px;
   display: block;
   margin: 4px 0;
 }
@@ -1748,7 +1748,7 @@ p {
   border: 1px solid #367644;
   border-radius: 5px;
   padding: 8px 11px;
-  font-size: 8px;
+  font-size: 13px;
 }
 .lesson-result-actions button.secondary {
   background: transparent;
@@ -1756,7 +1756,7 @@ p {
   border-color: #b8cda7;
 }
 .result-status {
-  font-size: 8px !important;
+  font-size: 13px !important;
   margin-top: 10px;
   color: #46733a !important;
 }
@@ -1777,7 +1777,7 @@ p {
   color: #839971;
 }
 .teacher-bottom > p {
-  font-size: 11px;
+  font-size: 14px;
   margin-left: auto;
 }
 .teacher-bottom strong {
@@ -1861,7 +1861,7 @@ p {
   font-size: 43px;
 }
 .connected-copy > p {
-  font-size: 12px;
+  font-size: 18px;
   line-height: 1.9;
   margin: 25px 0;
   max-width: 415px;
@@ -1879,10 +1879,10 @@ p {
   line-height: 1;
 }
 .offline-note strong {
-  font-size: 11px;
+  font-size: 15px;
 }
 .offline-note p {
-  font-size: 10px;
+  font-size: 15px;
   line-height: 1.8;
   max-width: 355px;
   margin-top: 5px;
@@ -1957,7 +1957,7 @@ p {
 }
 .final-section > p {
   margin-top: 20px;
-  font-size: 14px;
+  font-size: 18px;
 }
 .final-actions {
   display: flex;
@@ -1968,7 +1968,7 @@ p {
 }
 .final-section > small {
   display: block;
-  font-size: 9px;
+  font-size: 12px;
   color: #87937d;
   margin-top: 24px;
 }
@@ -1998,7 +1998,7 @@ p {
   padding: 28px 56px;
   max-width: 1440px;
   margin: auto;
-  font-size: 9px;
+  font-size: 12px;
 }
 .footer > a:first-child {
   margin-right: 5px;
@@ -2007,7 +2007,7 @@ p {
   width: 75px;
 }
 .footer > p {
-  font-size: 9px;
+  font-size: 12px;
 }
 .footer > a:nth-of-type(2) {
   margin-left: auto;
@@ -2021,7 +2021,7 @@ p {
 .motion-toggle {
   border: 0;
   background: none;
-  font-size: 8px;
+  font-size: 12px;
   color: #728269;
   padding: 5px;
 }
@@ -2164,7 +2164,7 @@ p {
     font-size: 78px;
   }
   .hero-copy > p {
-    font-size: 16px;
+    font-size: 18px;
   }
   .hero-world {
     scale: 1.06;
@@ -2196,18 +2196,18 @@ p {
   }
   .hero-copy > p {
     max-width: 360px;
-    font-size: 13px;
+    font-size: 18px;
   }
   .hero-actions {
     gap: 16px;
   }
   .hero-actions .button {
-    font-size: 11px;
+    font-size: 16px;
     padding: 14px 16px;
     gap: 15px;
   }
   .text-link {
-    font-size: 10px;
+    font-size: 14px;
   }
   .section {
     padding: 85px 35px;
@@ -2217,7 +2217,7 @@ p {
   }
   .section-heading > p {
     max-width: 290px;
-    font-size: 12px;
+    font-size: 18px;
   }
   .adventure-layout {
     gap: 35px;
@@ -2227,19 +2227,19 @@ p {
     font-size: 28px;
   }
   .adventure-story > p {
-    font-size: 11px;
+    font-size: 18px;
   }
   .steps strong {
-    font-size: 10px;
+    font-size: 16px;
   }
   .steps small {
-    font-size: 9px;
+    font-size: 14px;
   }
   .question-title {
     font-size: 18px;
   }
   .exercise-footer > span {
-    font-size: 8px;
+    font-size: 12px;
   }
   .connected-section {
     gap: 35px;
@@ -2268,7 +2268,7 @@ p {
     font-size: 48px;
   }
   .teacher-heading > p {
-    font-size: 12px;
+    font-size: 18px;
   }
   .teacher-bottom {
     gap: 14px;
@@ -2296,10 +2296,10 @@ p {
     gap: 22px;
   }
   .nav a {
-    font-size: 11px;
+    font-size: 16px;
   }
   .header-cta {
-    font-size: 10px;
+    font-size: 14px;
   }
   .hero {
     grid-template-columns: 1fr;
@@ -2319,17 +2319,17 @@ p {
   .hero-copy > p {
     max-width: 460px;
     margin: 25px auto 28px;
-    font-size: 14px;
+    font-size: 18px;
   }
   .hero-actions {
     justify-content: center;
   }
   .hero-actions .button {
-    font-size: 13px;
+    font-size: 16px;
     padding: 15px 23px;
   }
   .text-link {
-    font-size: 12px;
+    font-size: 14px;
   }
   .hero-note {
     justify-content: center;
@@ -2363,7 +2363,7 @@ p {
   }
   .section-heading > p {
     max-width: 260px;
-    font-size: 11px;
+    font-size: 18px;
   }
   .adventure-layout {
     grid-template-columns: 1fr;
@@ -2383,7 +2383,7 @@ p {
   }
   .adventure-story > p {
     margin: 0;
-    font-size: 12px;
+    font-size: 18px;
     max-width: none;
   }
   .adventure-story .steps {
@@ -2393,10 +2393,10 @@ p {
     margin-top: 7px;
   }
   .steps strong {
-    font-size: 10px;
+    font-size: 16px;
   }
   .steps small {
-    font-size: 8px;
+    font-size: 14px;
   }
   .try-note {
     display: none;
@@ -2408,23 +2408,23 @@ p {
     font-size: 8px;
   }
   .exercise-tabs button {
-    font-size: 10px;
+    font-size: 12px;
   }
   .question-title {
     font-size: 24px;
   }
   .answer {
-    font-size: 13px;
+    font-size: 15px;
     padding: 13px;
   }
   .question-meta {
-    font-size: 8px;
+    font-size: 10px;
   }
   .game-button {
-    font-size: 12px;
+    font-size: 13px;
   }
   .exercise-footer > span {
-    font-size: 10px;
+    font-size: 12px;
   }
   .window-top {
     font-size: 8px;
@@ -2445,7 +2445,7 @@ p {
     font-size: 25px;
   }
   .feature-intro p {
-    font-size: 10px;
+    font-size: 17px;
   }
   .feature-number {
     width: 23px;
@@ -2459,12 +2459,12 @@ p {
     height: 335px;
   }
   .message {
-    font-size: 10px;
+    font-size: 15px;
     max-width: 94%;
     padding: 11px;
   }
   .message.user {
-    font-size: 9px;
+    font-size: 15px;
   }
   .chat-header {
     padding: 17px 15px;
@@ -2477,14 +2477,14 @@ p {
     gap: 4px;
   }
   .chat-suggestions button {
-    font-size: 7px;
+    font-size: 12px;
     padding: 5px 7px;
   }
   .chat-composer {
     margin: 11px 15px 8px;
   }
   .chat-composer input {
-    font-size: 9px;
+    font-size: 16px;
   }
   .live-app {
     height: 518px;
@@ -2493,7 +2493,7 @@ p {
     padding: 10px 20px;
   }
   .live-content > p {
-    font-size: 11px;
+    font-size: 16px;
   }
   .teacher-heading {
     display: block;
@@ -2506,7 +2506,7 @@ p {
   }
   .teacher-heading > p {
     max-width: 520px;
-    font-size: 12px;
+    font-size: 18px;
     margin-top: 25px;
   }
   .teacher-studio {
@@ -2519,7 +2519,7 @@ p {
     font-size: 6px;
   }
   .teacher-bottom > p {
-    font-size: 9px;
+    font-size: 14px;
   }
   .teacher-bottom {
     gap: 12px;
@@ -2538,10 +2538,10 @@ p {
     font-size: 33px;
   }
   .connected-copy > p {
-    font-size: 11px;
+    font-size: 18px;
   }
   .offline-note p {
-    font-size: 9px;
+    font-size: 15px;
   }
   .film-header h2 {
     font-size: 38px;
@@ -2561,10 +2561,10 @@ p {
     display: none;
   }
   .footer {
-    font-size: 8px;
+    font-size: 12px;
   }
   .motion-toggle {
-    font-size: 7px;
+    font-size: 12px;
   }
 }
 @media (max-width: 600px) {
@@ -2579,7 +2579,7 @@ p {
     width: 87px;
   }
   .header-cta {
-    font-size: 9px;
+    font-size: 14px;
     gap: 13px;
     padding: 9px 11px;
     margin-left: auto;
@@ -2628,7 +2628,7 @@ p {
     gap: 20px;
   }
   .nav a {
-    font-size: 14px;
+    font-size: 16px;
   }
   .hero {
     padding: 47px 22px 80px;
@@ -2654,7 +2654,7 @@ p {
     height: 17px;
   }
   .hero-copy > p {
-    font-size: 12px;
+    font-size: 18px;
     line-height: 1.9;
     max-width: 335px;
     margin: 25px auto;
@@ -2663,12 +2663,12 @@ p {
     gap: 16px;
   }
   .hero-actions .button {
-    font-size: 10px;
+    font-size: 16px;
     padding: 13px 15px;
     gap: 13px;
   }
   .text-link {
-    font-size: 9px;
+    font-size: 14px;
     gap: 7px;
   }
   .play-small {
@@ -2678,7 +2678,7 @@ p {
   }
   .hero-note {
     margin-top: 24px;
-    font-size: 8px;
+    font-size: 13px;
   }
   .tiny-icons img {
     width: 30px;
@@ -2746,7 +2746,7 @@ p {
     font-size: 35px;
   }
   .section-heading > p {
-    font-size: 12px;
+    font-size: 18px;
     max-width: none;
     margin-top: 22px;
     line-height: 1.85;
@@ -2764,7 +2764,7 @@ p {
   .adventure-story > p {
     margin: 18px 0 20px;
     line-height: 1.8;
-    font-size: 12px;
+    font-size: 18px;
   }
   .adventure-story .steps {
     display: grid;
@@ -2776,10 +2776,10 @@ p {
     font-size: 7px;
   }
   .steps strong {
-    font-size: 11px;
+    font-size: 16px;
   }
   .steps small {
-    font-size: 9px;
+    font-size: 14px;
   }
   .adventure-layout {
     gap: 30px;
@@ -2864,11 +2864,11 @@ p {
     margin-bottom: 15px;
   }
   .exercise-tabs button {
-    font-size: 8px;
+    font-size: 12px;
     padding: 12px 0 10px;
   }
   .question-meta {
-    font-size: 6px;
+    font-size: 10px;
     letter-spacing: 1px;
   }
   .question-title {
@@ -2881,7 +2881,7 @@ p {
     min-height: 90px;
   }
   .answer {
-    font-size: 10px;
+    font-size: 15px;
     padding: 11px 9px;
     gap: 7px;
   }
@@ -2896,20 +2896,20 @@ p {
     align-items: center;
   }
   .exercise-footer > span {
-    font-size: 8px;
+    font-size: 12px;
     max-width: 60%;
   }
   .game-button {
-    font-size: 9px;
+    font-size: 13px;
     padding: 9px 11px;
     gap: 7px;
   }
   .word-chip {
-    font-size: 10px;
+    font-size: 15px;
     padding: 9px 13px;
   }
   .sequence button {
-    font-size: 9px;
+    font-size: 14px;
     padding: 10px;
   }
   .journey-footnote {
@@ -2918,11 +2918,11 @@ p {
     margin-top: 23px;
   }
   .journey-footnote > p {
-    font-size: 8px;
+    font-size: 12px;
     width: calc(100% - 18px);
   }
   .journey-footnote > a {
-    font-size: 9px;
+    font-size: 13px;
     margin: 6px 0 0 13px;
   }
   .tutor-grid {
@@ -2933,7 +2933,7 @@ p {
     font-size: 28px;
   }
   .feature-intro p {
-    font-size: 12px;
+    font-size: 17px;
     max-width: none;
     margin-top: 15px;
   }
@@ -2951,10 +2951,10 @@ p {
     padding: 15px;
   }
   .chat-header strong {
-    font-size: 12px;
+    font-size: 16px;
   }
   .chat-header small {
-    font-size: 8px;
+    font-size: 12px;
   }
   .chat-label {
     display: block;
@@ -2965,12 +2965,12 @@ p {
     padding: 17px;
   }
   .message {
-    font-size: 11px;
+    font-size: 15px;
     max-width: 90%;
     padding: 12px;
   }
   .message.user {
-    font-size: 10px;
+    font-size: 15px;
   }
   .message small {
     font-size: 6px;
@@ -2980,14 +2980,14 @@ p {
     gap: 6px;
   }
   .chat-suggestions button {
-    font-size: 8px;
+    font-size: 12px;
     padding: 6px 9px;
   }
   .chat-composer input {
-    font-size: 10px;
+    font-size: 16px;
   }
   .simulation-note {
-    font-size: 7px;
+    font-size: 11px;
   }
   .live-app {
     height: 490px;
@@ -3001,16 +3001,16 @@ p {
     padding: 20px 22px;
   }
   .live-state {
-    font-size: 9px;
+    font-size: 12px;
   }
   .live-content > p {
-    font-size: 12px;
+    font-size: 16px;
   }
   .live-content {
     min-height: 88px;
   }
   .live-button {
-    font-size: 10px;
+    font-size: 14px;
     padding: 11px 20px;
   }
   .teacher-section {
@@ -3024,7 +3024,7 @@ p {
     font-size: 36px;
   }
   .teacher-heading > p {
-    font-size: 12px;
+    font-size: 18px;
     margin-top: 23px;
   }
   .teacher-studio {
@@ -3043,7 +3043,7 @@ p {
     font-size: 22px;
   }
   .studio-title p {
-    font-size: 8px;
+    font-size: 13px;
   }
   .studio-magic {
     width: 35px;
@@ -3060,33 +3060,33 @@ p {
     padding: 17px;
   }
   .generator-form h4 {
-    font-size: 7px;
+    font-size: 11px;
     margin-bottom: 20px;
   }
   .generator-form label {
-    font-size: 9px;
+    font-size: 13px;
   }
   .generator-form select,
   .generator-form textarea {
-    font-size: 11px;
+    font-size: 16px;
     padding: 12px;
   }
   .generator-info {
-    font-size: 9px;
+    font-size: 13px;
   }
   .generate-button {
-    font-size: 11px;
+    font-size: 14px;
     padding: 13px 15px;
   }
   .generator-form .simulation-note {
-    font-size: 7px;
+    font-size: 11px;
   }
   .lesson-preview {
     min-height: 350px;
     padding: 22px;
   }
   .preview-empty > p {
-    font-size: 11px;
+    font-size: 15px;
     max-width: 270px;
   }
   .preview-label {
@@ -3102,26 +3102,26 @@ p {
     font-size: 26px;
   }
   .lesson-result .result-kicker {
-    font-size: 7px;
+    font-size: 11px;
   }
   .lesson-result .result-meta {
-    font-size: 8px;
+    font-size: 12px;
   }
   .lesson-block {
     padding: 13px;
   }
   .lesson-block > small {
-    font-size: 7px;
+    font-size: 11px;
   }
   .lesson-block > p {
-    font-size: 10px;
+    font-size: 14px;
   }
   .lesson-result-actions button {
-    font-size: 10px;
+    font-size: 13px;
     padding: 10px 13px;
   }
   .result-status {
-    font-size: 9px !important;
+    font-size: 13px !important;
   }
   .teacher-bottom {
     flex-wrap: wrap;
@@ -3136,7 +3136,7 @@ p {
     width: 100%;
     text-align: center;
     margin: 4px 0 0;
-    font-size: 11px;
+    font-size: 14px;
   }
   .connected-section {
     grid-template-columns: 1fr;
@@ -3155,14 +3155,14 @@ p {
     font-size: 35px;
   }
   .connected-copy > p {
-    font-size: 12px;
+    font-size: 18px;
     max-width: none;
   }
   .offline-note {
     gap: 13px;
   }
   .offline-note p {
-    font-size: 10px;
+    font-size: 15px;
     max-width: none;
   }
   .film-header {
@@ -3206,7 +3206,7 @@ p {
     letter-spacing: 1.4px;
   }
   .final-section > p {
-    font-size: 12px;
+    font-size: 18px;
   }
   .final-tuki {
     position: relative;
@@ -3235,14 +3235,14 @@ p {
     font-size: 15px;
   }
   .final-section > small {
-    font-size: 7px;
+    font-size: 12px;
     margin-top: 22px;
   }
   .footer {
     padding: 24px 22px;
     flex-wrap: wrap;
     gap: 20px;
-    font-size: 8px;
+    font-size: 12px;
   }
   .footer > a:first-child img {
     width: 66px;
@@ -3255,7 +3255,7 @@ p {
     margin-right: auto;
   }
   .motion-toggle {
-    font-size: 8px;
+    font-size: 12px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -3308,28 +3308,28 @@ p {
 /* La interfaz de demostración se puede leer también sin acercar el navegador. */
 @media (min-width: 901px) {
   .adventure-story > p {
-    font-size: 14px;
+    font-size: 18px;
   }
   .steps strong {
-    font-size: 12px;
+    font-size: 16px;
   }
   .steps small {
-    font-size: 11px;
+    font-size: 14px;
   }
   .exercise-tabs button {
-    font-size: 10px;
+    font-size: 12px;
   }
   .question-meta {
-    font-size: 8px;
-  }
-  .answer {
-    font-size: 13px;
-  }
-  .exercise-footer > span {
     font-size: 10px;
   }
+  .answer {
+    font-size: 15px;
+  }
+  .exercise-footer > span {
+    font-size: 12px;
+  }
   .game-button {
-    font-size: 11px;
+    font-size: 13px;
   }
   .game-hud strong {
     font-size: 12px;
@@ -3338,13 +3338,13 @@ p {
     font-size: 8px;
   }
   .feature-intro p {
-    font-size: 13px;
+    font-size: 17px;
   }
   .chat-header strong {
-    font-size: 14px;
+    font-size: 16px;
   }
   .chat-header small {
-    font-size: 10px;
+    font-size: 12px;
   }
   .chat-label {
     font-size: 8px;
@@ -3353,26 +3353,26 @@ p {
     height: 365px;
   }
   .message {
-    font-size: 13px;
+    font-size: 15px;
   }
   .message.user {
-    font-size: 12px;
+    font-size: 15px;
   }
   .message small {
     font-size: 8px;
   }
   .chat-suggestions button {
-    font-size: 9px;
+    font-size: 12px;
   }
   .chat-composer input {
-    font-size: 12px;
+    font-size: 16px;
   }
   .chat-composer {
     padding-top: 7px;
     padding-bottom: 7px;
   }
   .chat-app .simulation-note {
-    font-size: 8px;
+    font-size: 11px;
   }
   .live-app {
     height: 563px;
@@ -3381,19 +3381,19 @@ p {
     font-size: 10px;
   }
   .live-state {
-    font-size: 10px;
+    font-size: 12px;
   }
   .live-content {
     min-height: 115px;
   }
   .live-content > p {
-    font-size: 14px;
+    font-size: 16px;
   }
   .live-button {
-    font-size: 12px;
+    font-size: 14px;
   }
   .live-app .simulation-note {
-    font-size: 8px;
+    font-size: 11px;
   }
   .studio-top {
     font-size: 10px;
@@ -3405,64 +3405,64 @@ p {
     font-size: 11px;
   }
   .studio-title p {
-    font-size: 11px;
+    font-size: 13px;
   }
   .generator-form h4 {
-    font-size: 9px;
+    font-size: 11px;
   }
   .generator-form label {
-    font-size: 10px;
+    font-size: 13px;
   }
   .generator-form select,
   .generator-form textarea {
-    font-size: 12px;
+    font-size: 16px;
   }
   .generator-info {
-    font-size: 10px;
+    font-size: 13px;
   }
   .generate-button {
-    font-size: 12px;
+    font-size: 14px;
   }
   .generator-form .simulation-note {
-    font-size: 8px;
+    font-size: 11px;
   }
   .preview-empty > p {
-    font-size: 12px;
+    font-size: 15px;
     max-width: 270px;
   }
   .preview-label {
     font-size: 8px;
   }
   .lesson-block > small {
-    font-size: 8px;
-  }
-  .lesson-block > p {
     font-size: 11px;
   }
+  .lesson-block > p {
+    font-size: 14px;
+  }
   .lesson-result .result-meta {
-    font-size: 9px;
+    font-size: 12px;
   }
   .lesson-result .result-kicker {
-    font-size: 8px;
+    font-size: 11px;
   }
   .lesson-result-actions button {
-    font-size: 10px;
+    font-size: 13px;
   }
   .lesson-block input,
   .lesson-block textarea {
-    font-size: 12px;
+    font-size: 16px;
   }
   .result-status {
-    font-size: 10px !important;
+    font-size: 13px !important;
   }
   .connected-copy > p {
-    font-size: 13px;
+    font-size: 18px;
   }
   .offline-note p {
-    font-size: 11px;
+    font-size: 15px;
   }
   .teacher-heading > p {
-    font-size: 14px;
+    font-size: 18px;
   }
 }
 @media (max-width: 900px) {
@@ -3508,7 +3508,7 @@ p {
     min-height: 490px;
   }
   .live-options button {
-    font-size: 11px;
+    font-size: 14px;
     padding: 8px 13px;
   }
 }
@@ -3590,4 +3590,63 @@ p {
   .vocabulary-visual span {
     font-size: 10px;
   }
+}
+
+/* Escala de lectura: títulos e ilustraciones conservan sus proporciones. */
+.hero-copy > p,
+.section-heading > p,
+.adventure-story > p,
+.feature-intro p,
+.teacher-heading > p,
+.connected-copy > p,
+.final-section > p {
+  line-height: 1.75;
+}
+.hero-actions,
+.final-actions,
+.teacher-bottom,
+.film-caption,
+.lesson-result-actions {
+  flex-wrap: wrap;
+}
+.steps li > span {
+  flex-shrink: 0;
+}
+.hero-copy,
+.adventure-story,
+.connected-copy,
+.generator-layout > * {
+  min-width: 0;
+}
+.message,
+.lesson-block {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 900px) {
+  .nav { gap: 18px; }
+  .nav a { font-size: 14px; }
+  .adventure-story .steps { flex-wrap: wrap; }
+  .teacher-bottom > p { margin-left: 0; }
+}
+@media (max-width: 600px) {
+  .hero-copy > p,
+  .section-heading > p,
+  .adventure-story > p,
+  .feature-intro p,
+  .teacher-heading > p,
+  .connected-copy > p,
+  .final-section > p { font-size: 17px; }
+  .hero-copy > p { max-width: 360px; }
+  .hero-actions { gap: 18px 22px; }
+  .hero-actions .button { font-size: 15px; }
+  .header-cta { font-size: 12px; }
+  .nav a { font-size: 16px; }
+  .final-actions .button { font-size: 14px; }
+  .offline-note p { font-size: 14px; }
+  .steps strong { font-size: 15px; }
+  .exercise-footer { align-items: flex-start; }
+  .exercise-footer > span { max-width: none; flex: 1; }
+  .form-row { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .film-caption { gap: 10px; }
+  .connected-section { overflow: hidden; }
 }

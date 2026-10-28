@@ -44,3 +44,9 @@ Las demos son implementaciones web inspiradas en los componentes originales; no 
 ## Ajuste de idiomas y escenario
 
 Las ocho entradas miskito utilizadas se contrastaron con `DATOS_CORPUS_SEED` y la semilla del corpus oficial. Se eliminaron los ejemplos de matemáticas y ciencias tanto de la web como del video. El fondo generado tiene suelo cálido claro, con el bosque azul oscuro al fondo. Los pies y sombras del héroe y enemigo usan el mismo plano y posiciones interiores x=36% / x=64%.
+
+## Escala de lectura
+
+Los párrafos principales usan 18 px en escritorio y 17 px en móvil; la navegación de escritorio usa 16 px. Se ampliaron pasos, notas, respuestas, chat y controles del constructor sin cambiar los títulos ni escalar ilustraciones. Botones y formularios permiten saltos de línea y crecimiento vertical.
+
+Revisión visual en 1280, 996, 768, 390 y 320 px. Sin desbordamiento horizontal final ni texto recortado en los controles inspeccionados; la vista previa de lecciones se generó correctamente con los textos ampliados. Captura de referencia: `docs/preview/lectura-desktop.jpg`.
