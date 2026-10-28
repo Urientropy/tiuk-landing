@@ -1,445 +1,752 @@
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TIUK — Aprender se siente como jugar</title>
-  <meta name="description" content="Plataforma de aprendizaje gamificado tipo RPG sin conexión con Profe Tuki.">
-  <meta name="theme-color" content="#0F172A">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="TIUK — Aprender se siente como jugar">
-  <meta property="og:description" content="Plataforma de aprendizaje gamificado tipo RPG sin conexión con Profe Tuki.">
-  <meta property="og:image" content="assets/img/saludando.webp">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/marca/simbolo.svg">
-
-  <!-- Google Fonts: Nunito (800, 900) e Inter (400, 600, 700) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Nunito:wght@800;900&display=swap" rel="stylesheet">
-
-  <!-- Estilos principales -->
-  <link rel="stylesheet" href="css/estilos.css">
-
-  <!-- Script diferido -->
-  <script src="js/principal.js" defer></script>
-</head>
-<body>
-  <!-- Barra de progreso superior -->
-  <div class="progreso-scroll" aria-hidden="true"><span class="progreso-scroll__barra"></span></div>
-
-  <!-- Halo de cursor para pantallas de puntero fino -->
-  <div class="cursor-brillo" aria-hidden="true"></div>
-
-  <!-- Enlace accesible de salto al contenido -->
-  <a class="salto" href="#contenido">Saltar al contenido</a>
-
-  <!-- 1. Cabecera -->
-  <header class="cabecera">
-    <div class="contenedor cabecera__contenedor">
-      <a class="cabecera__marca" href="#inicio">
-        <img src="assets/marca/wordmark-negativo.svg" alt="TIUK" width="782" height="269">
-      </a>
-      <button class="cabecera__menu" type="button" aria-expanded="false" aria-controls="navegacion" aria-label="Abrir menú">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav id="navegacion" class="navegacion">
-        <a class="navegacion__enlace" href="#historia">Cómo es</a>
-        <a class="navegacion__enlace" href="#poderes">Poderes</a>
-        <a class="navegacion__enlace" href="#tuki">Tuki</a>
-        <a class="navegacion__enlace" href="#apps">Apps</a>
-        <a class="boton boton--primario magnetico" href="#empezar">Empezar</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TIUK — De «no entiendo» a «otro nivel».</title>
+    <meta
+      name="description"
+      content="Convierte una clase en una aventura. Batallas RPG con preguntas, Profe Tuki con IA y un constructor de lecciones para docentes. Explora TIUK con demos interactivas."
+    />
+    <meta name="theme-color" content="#f7f9f2" />
+    <meta
+      property="og:title"
+      content="TIUK — De «no entiendo» a «otro nivel»."
+    />
+    <meta
+      property="og:description"
+      content="Responde. Ataca. Aprende. Descubre una aventura educativa con Profe Tuki."
+    />
+    <meta
+      property="og:image"
+      content="assets/video/tiuk-promo.jpg?v=idiomas-2"
+    />
+    <link rel="icon" href="assets/marca/simbolo.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="assets/fonts/nunito-black.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <script defer src="js/battle.js"></script>
+    <script defer src="js/idiomas.js"></script>
+    <script defer src="js/principal.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <header class="header">
+      <a class="brand" href="#inicio" aria-label="TIUK, inicio"
+        ><img
+          src="assets/marca/wordmark.svg"
+          width="124"
+          height="43"
+          alt="TIUK"
+      /></a>
+      <nav class="nav" id="navigation" aria-label="Navegación principal">
+        <a href="#aventura">La aventura</a><a href="#tuki">Conoce a Tuki</a
+        ><a href="#docentes">Para docentes</a>
       </nav>
-    </div>
-  </header>
+      <a href="#aventura" class="button button-small header-cta"
+        >Pruébalo en vivo <span aria-hidden="true">↗</span></a
+      >
+      <button
+        class="menu-toggle"
+        aria-label="Abrir menú"
+        aria-controls="navigation"
+        aria-expanded="false"
+      >
+        <span></span><span></span>
+      </button>
+    </header>
 
-  <!-- 2. Contenido principal -->
-  <main id="contenido">
-    <!-- 2.1 Héroe -->
-    <section id="inicio" class="heroe">
-      <canvas class="heroe__estrellas" aria-hidden="true"></canvas>
+    <main id="contenido">
+      <section class="hero" id="inicio">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="status-dot"></span> EL APRENDIZAJE TIENE OTRO MUNDO
+          </div>
+          <h1>
+            De <span class="handwritten">«no entiendo»</span><br />a
+            <span class="hero-highlight"
+              >«otro nivel»<svg viewBox="0 0 510 30" aria-hidden="true">
+                <path d="M5 19Q225-5 500 12M35 27Q260 6 470 23" /></svg></span
+            >.
+          </h1>
+          <p>
+            Cuando una lección se vuelve aventura, cada respuesta te lleva más
+            lejos. Explora islas, vence desafíos y aprende con Profe Tuki a tu
+            lado.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#aventura"
+              >Entrar a la aventura <span aria-hidden="true">↗</span></a
+            ><a href="#pelicula" class="text-link"
+              ><span class="play-small" aria-hidden="true">▶</span> Ver TIUK en
+              acción</a
+            >
+          </div>
+          <div class="hero-note">
+            <span class="tiny-icons"
+              ><img
+                src="assets/marca/icono-estudiante.svg"
+                alt=""
+                width="30"
+                height="30" /><img
+                src="assets/marca/icono-docente.svg"
+                alt=""
+                width="30"
+                height="30" /></span
+            ><span
+              >Un mundo para aprender.<br /><strong
+                >Dos apps para hacerlo posible.</strong
+              ></span
+            >
+          </div>
+        </div>
+        <div
+          class="hero-world"
+          id="hero-world"
+          aria-label="Tuki te da la bienvenida a las islas de conocimiento"
+        >
+          <div class="world-ring ring-one" aria-hidden="true"></div>
+          <div class="world-ring ring-two" aria-hidden="true"></div>
+          <svg class="world-trail" viewBox="0 0 700 650" aria-hidden="true">
+            <path d="M80 180C540 20 650 300 390 340S35 550 580 540" />
+          </svg>
+          <div class="world-label">
+            <span class="status-dot"></span> TU PRÓXIMO NIVEL EMPIEZA AQUÍ
+          </div>
+          <div class="island island-back" data-depth="0.07">
+            <img
+              src="assets/game/isla_volcanica.webp"
+              alt=""
+              width="260"
+              height="260"
+            />
+          </div>
+          <div class="island island-main" data-depth="-0.045">
+            <img
+              src="assets/game/isla_jungla.webp"
+              alt="Isla de la jungla de TIUK"
+              width="520"
+              height="520"
+              fetchpriority="high"
+            />
+          </div>
+          <div class="island island-side" data-depth="0.12">
+            <img
+              src="assets/game/isla_playa.webp"
+              alt=""
+              width="230"
+              height="230"
+            />
+          </div>
+          <button class="hero-tuki" id="saludar" aria-label="Saludar a Tuki">
+            <img
+              id="tuki-animado"
+              src="assets/img/tuki-idle.webp"
+              alt="Profe Tuki, tu compañero de aventura"
+              width="330"
+              height="330"
+              fetchpriority="high"
+            />
+          </button>
+          <div class="tuki-speech" id="hero-speech" aria-live="polite">
+            ¡Tu curiosidad es tu superpoder! <span>✦</span>
+          </div>
+          <div class="float-card quest-card" data-depth="-0.06">
+            <span class="card-icon">⚔</span>
+            <div>
+              <small>MISIÓN DEL DÍA</small><strong>Saluda en miskito</strong>
+              <div class="mini-progress"><i></i></div>
+            </div>
+            <span class="quest-star">✦</span>
+          </div>
+          <div class="float-card xp-card" data-depth="0.09">
+            <img
+              src="assets/game/icono_estrella_dorada.svg"
+              width="37"
+              height="37"
+              alt=""
+            />
+            <div><strong>+50 XP</strong><small>Un paso más lejos.</small></div>
+          </div>
+          <span class="world-spark spark-one" aria-hidden="true">✳</span
+          ><span class="world-spark spark-two" aria-hidden="true">✦</span>
+          <span class="world-coordinate" aria-hidden="true"
+            >ISLA 01 / CURIOSIDAD ∞</span
+          >
+        </div>
+        <a class="scroll-cue" href="#aventura"
+          ><span>DESLIZA. EXPLORA. DESCUBRE.</span
+          ><span aria-hidden="true">↓</span></a
+        >
+      </section>
 
-      <!-- Capas decorativas de paralaje -->
-      <div class="nebulosa nebulosa--turquesa" data-paralaje="0.15" data-puntero="10" aria-hidden="true"></div>
-      <div class="nebulosa nebulosa--violeta" data-paralaje="0.25" data-puntero="18" aria-hidden="true"></div>
-      <div class="orbita" data-paralaje="0.1" data-puntero="6" aria-hidden="true"></div>
+      <div class="promise-strip" aria-label="La experiencia TIUK">
+        <span>La curiosidad mueve el mundo.</span><i>✦</i
+        ><span>Una pregunta abre el camino.</span><i>✦</i
+        ><span>Aprender también se juega.</span><i>✦</i>
+      </div>
 
-      <img class="flotante flotante--1" src="assets/img/cara-feliz.webp" width="560" height="450" data-paralaje="0.45" data-puntero="30" loading="lazy" alt="">
-      <img class="flotante flotante--2" src="assets/img/cara-asombro.webp" width="560" height="467" data-paralaje="0.6" data-puntero="40" loading="lazy" alt="">
-      <img class="flotante flotante--3" src="assets/img/cara-osado.webp" width="560" height="417" data-paralaje="0.35" data-puntero="24" loading="lazy" alt="">
-
-      <div class="contenedor heroe__contenedor">
-        <div class="heroe__rejilla">
-          <div class="heroe__contenido">
-            <h1 class="titulo-dividido">Aprender se siente como <span class="resaltado">jugar</span></h1>
-            <p class="heroe__lema">Cualquier materia. Sin internet. Con Tuki.</p>
-            <div class="heroe__acciones">
-              <a class="boton boton--primario magnetico" href="#historia">Descubrir</a>
-              <button id="boton-saludar" type="button" class="boton boton--fantasma magnetico">Saluda a Tuki</button>
+      <section class="adventure section" id="aventura">
+        <div class="section-heading reveal">
+          <div>
+            <div class="eyebrow">01 / APRENDER HACIENDO</div>
+            <h2>
+              Otra ficha se olvida.<br /><span class="green"
+                >Una aventura se vive.</span
+              >
+            </h2>
+          </div>
+          <p>
+            El mismo contenido de clase, con una razón para seguir. En TIUK,
+            aprender a decir «Tingki» también puede ser el golpe que gana una
+            batalla.
+          </p>
+        </div>
+        <div class="adventure-layout">
+          <div class="adventure-story reveal">
+            <span class="chapter-index">01 — 03</span>
+            <h3>Tu conocimiento<br />es tu mejor ataque.</h3>
+            <p>
+              Elige una respuesta. Si aciertas, tu héroe ataca y el enemigo
+              pierde vida. Si fallas, recibe un contraataque y una explicación
+              para intentarlo otra vez.
+            </p>
+            <ol class="steps">
+              <li>
+                <span>01</span>
+                <div>
+                  <strong>Piensa la respuesta</strong
+                  ><small>Opción múltiple, completar y ordenar.</small>
+                </div>
+              </li>
+              <li>
+                <span>02</span>
+                <div>
+                  <strong>Convierte el acierto en acción</strong
+                  ><small>Ataques, impactos y defensa activa.</small>
+                </div>
+              </li>
+              <li>
+                <span>03</span>
+                <div>
+                  <strong>Desbloquea tu siguiente reto</strong
+                  ><small>XP, niveles y nuevas islas por explorar.</small>
+                </div>
+              </li>
+            </ol>
+            <div class="try-note">
+              <span aria-hidden="true">↳</span> Esta vez, tú tienes el control.
             </div>
           </div>
-
-          <div class="heroe__visual" data-paralaje="-0.12" data-puntero="14">
-            <div class="tuki-escena">
-              <div class="tuki-escena__aura" aria-hidden="true"></div>
-              <div class="tuki-escena__anillo" aria-hidden="true"></div>
-              <div class="burbuja" id="burbuja-tuki" aria-live="polite">
-                <p id="texto-burbuja">Hola, soy Tuki</p>
+          <div class="game-window reveal" id="game-demo">
+            <div class="window-top">
+              <span class="window-dots" aria-hidden="true"
+                ><i></i><i></i><i></i></span
+              ><span>TIUK · APP ESTUDIANTE</span
+              ><span class="demo-badge">DEMO INTERACTIVA</span>
+            </div>
+            <div class="game-hud">
+              <button
+                id="game-reset"
+                class="icon-button"
+                aria-label="Reiniciar aventura"
+              >
+                ↻
+              </button>
+              <div>
+                <small>REINO MISKITO</small
+                ><strong>El desafío de los saludos</strong>
               </div>
-              <img id="tuki-animado" class="tuki-escena__tuki" src="assets/img/tuki-idle.webp" alt="Tuki, la mascota de TIUK" width="720" height="720" fetchpriority="high">
-              <div class="tuki-escena__sombra" aria-hidden="true"></div>
-
-              <svg class="chispa chispa--estrella" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <path d="M12 2 C12 7.5 7.5 12 2 12 C7.5 12 12 16.5 12 22 C12 16.5 16.5 12 22 12 C16.5 12 12 7.5 12 2 Z"></path>
-              </svg>
-              <svg class="chispa chispa--rombo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <polygon points="12 2 22 12 12 22 2 12"></polygon>
-              </svg>
-              <svg class="chispa chispa--circulo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <circle cx="12" cy="12" r="8"></circle>
-              </svg>
-              <span class="chispa chispa--xp">+50 XP</span>
+              <span class="hearts" id="game-hearts" aria-label="3 vidas"
+                >♥ ♥ ♥</span
+              ><span class="xp-value" id="game-xp">✦ 0 XP</span>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <a class="heroe__bajar" href="#historia" aria-label="Bajar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-          <rect x="6" y="3" width="12" height="18" rx="6"></rect>
-          <line x1="12" y1="7" x2="12" y2="11"></line>
-          <path d="M9 18l3 3 3-3"></path>
-        </svg>
-      </a>
-    </section>
-
-    <!-- 2.2 Cinta de materias -->
-    <section class="cinta" aria-label="Materias">
-      <div class="cinta__fila" data-direccion="1">
-        <div class="cinta__pista">
-          <span class="cinta__item">Matemáticas</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Ciencias</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Historia</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Lenguaje</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Idiomas</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Miskito</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Arte</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Matemáticas</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Ciencias</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Historia</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Lenguaje</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Idiomas</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Miskito</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Arte</span><span class="cinta__separador" aria-hidden="true"></span>
-        </div>
-      </div>
-      <div class="cinta__fila" data-direccion="-1">
-        <div class="cinta__pista">
-          <span class="cinta__item">Matemáticas</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Ciencias</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Historia</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Lenguaje</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Idiomas</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Miskito</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Arte</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Matemáticas</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Ciencias</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Historia</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Lenguaje</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Idiomas</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Miskito</span><span class="cinta__separador" aria-hidden="true"></span>
-          <span class="cinta__item">Arte</span><span class="cinta__separador" aria-hidden="true"></span>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2.3 Historia (Scroll narrativo) -->
-    <section id="historia" class="historia" data-paso-activo="0">
-      <div class="historia__progreso" aria-hidden="true">
-        <span class="historia__progreso-relleno"></span>
-      </div>
-      <div class="contenedor historia__contenedor">
-        <div class="historia__rejilla">
-          <div class="historia__escenario">
-            <div class="historia__marco">
-              <img class="historia__imagen activa" data-paso="0" src="assets/img/ensenando.webp" width="560" height="515" loading="lazy" alt="Docente creando lecciones">
-              <img class="historia__imagen" data-paso="1" src="assets/img/corriendo.webp" width="560" height="490" loading="lazy" alt="Estudiante jugando la aventura">
-              <img class="historia__imagen" data-paso="2" src="assets/img/subir-nivel.webp" width="560" height="416" loading="lazy" alt="Estudiante subiendo de nivel">
-            </div>
-          </div>
-          <div class="historia__pasos">
-            <article class="historia__paso activo" data-paso="0">
-              <span class="historia__numero">01</span>
-              <h2>El docente crea</h2>
-              <p>Lecciones de cualquier materia en minutos.</p>
-            </article>
-            <article class="historia__paso" data-paso="1">
-              <span class="historia__numero">02</span>
-              <h2>Tú juegas</h2>
-              <p>Islas, batallas y puzles en lugar de tareas.</p>
-            </article>
-            <article class="historia__paso" data-paso="2">
-              <span class="historia__numero">03</span>
-              <h2>Subes de nivel</h2>
-              <p>XP, rachas y logros en cada acierto.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2.4 Poderes -->
-    <section id="poderes" class="poderes">
-      <div class="contenedor">
-        <h2 class="revelar">Superpoderes</h2>
-        <div class="poderes__rejilla">
-          <article class="poder tarjeta-3d revelar" style="--color-poder: var(--turquesa)">
-            <span class="poder__icono">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
-                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                <line x1="12" y1="19" x2="12" y2="22"></line>
-                <line x1="8" y1="22" x2="16" y2="22"></line>
-              </svg>
-            </span>
-            <h3>Profe Tuki con voz</h3>
-            <p>Te explica, te escucha y te anima.</p>
-          </article>
-
-          <article class="poder tarjeta-3d revelar" style="--color-poder: var(--esmeralda-juego)">
-            <span class="poder__icono">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
-                <line x1="9" y1="3" x2="9" y2="18"></line>
-                <line x1="15" y1="6" x2="15" y2="21"></line>
-              </svg>
-            </span>
-            <h3>Aventura RPG</h3>
-            <p>Mapas, batallas y puzles por materia.</p>
-          </article>
-
-          <article class="poder tarjeta-3d revelar" style="--color-poder: var(--mango)">
-            <span class="poder__icono">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-              </svg>
-            </span>
-            <h3>XP y rachas</h3>
-            <p>Cada acierto suma. Cada día cuenta.</p>
-          </article>
-
-          <article class="poder tarjeta-3d revelar" style="--color-poder: var(--coral)">
-            <span class="poder__icono">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <line x1="2" y1="2" x2="22" y2="22"></line>
-                <path d="M8.5 16.5a5 5 0 0 1 7 0"></path>
-                <path d="M4.9 12.9a10 10 0 0 1 5.3-2.6"></path>
-                <path d="M16.3 10.3a10 10 0 0 1 2.8 2.6"></path>
-                <path d="M1.4 8.7a15 15 0 0 1 5.6-2.9"></path>
-                <path d="M19 6.5a15 15 0 0 1 3.6 2.2"></path>
-                <circle cx="12" cy="20" r="1"></circle>
-              </svg>
-            </span>
-            <h3>Sin internet</h3>
-            <p>Aprende sin conexión; sincroniza al volver.</p>
-          </article>
-
-          <article class="poder tarjeta-3d revelar" style="--color-poder: var(--celeste-arcano)">
-            <span class="poder__icono">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="2" y1="12" x2="22" y2="12"></line>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-              </svg>
-            </span>
-            <h3>Tres idiomas</h3>
-            <p>Español, English y Miskito.</p>
-          </article>
-
-          <article class="poder tarjeta-3d revelar" style="--color-poder: var(--violeta-arcano)">
-            <span class="poder__icono">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
-                <rect x="9" y="9" width="6" height="6"></rect>
-                <line x1="9" y1="1" x2="9" y2="4"></line>
-                <line x1="15" y1="1" x2="15" y2="4"></line>
-                <line x1="9" y1="20" x2="9" y2="23"></line>
-                <line x1="15" y1="20" x2="15" y2="23"></line>
-                <line x1="20" y1="9" x2="23" y2="9"></line>
-                <line x1="20" y1="15" x2="23" y2="15"></line>
-                <line x1="1" y1="9" x2="4" y2="9"></line>
-                <line x1="1" y1="15" x2="4" y2="15"></line>
-              </svg>
-            </span>
-            <h3>IA en el dispositivo</h3>
-            <p>Pistas inteligentes sin gastar datos.</p>
-          </article>
-        </div>
-
-        <div class="cifras revelar">
-          <div class="cifra">
-            <span class="cifra__numero" data-contador="3">3</span>
-            <span class="cifra__etiqueta">idiomas</span>
-          </div>
-          <div class="cifra">
-            <span class="cifra__numero" data-contador="2">2</span>
-            <span class="cifra__etiqueta">apps</span>
-          </div>
-          <div class="cifra">
-            <span class="cifra__numero" data-contador="100">100</span>
-            <span class="cifra__sufijo">%</span>
-            <span class="cifra__etiqueta">sin conexión</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2.5 Tuki (Galería) -->
-    <section id="tuki" class="tuki">
-      <div class="contenedor">
-        <h2 class="revelar">Conoce a Tuki</h2>
-        <p class="tuki__subtitulo revelar">Tu tutor. Tu compañero de aventura.</p>
-
-        <div class="galeria" data-paralaje="0.08">
-          <div class="galeria__escenario tarjeta-3d">
-            <img id="tuki-galeria" src="assets/img/saludando.webp" width="560" height="549" alt="Tuki saludando" loading="lazy" decoding="async">
-            <div class="confeti" id="confeti" aria-hidden="true"></div>
-          </div>
-          <div class="galeria__opciones" role="group" aria-label="Poses de Tuki">
-            <button type="button" class="opcion-pose" data-pose="saludando" data-alto="549" aria-pressed="true">Saluda</button>
-            <button type="button" class="opcion-pose" data-pose="bien-hecho" data-alto="545" aria-pressed="false">Bien hecho</button>
-            <button type="button" class="opcion-pose" data-pose="curioso" data-alto="537" aria-pressed="false">Curioso</button>
-            <button type="button" class="opcion-pose" data-pose="dormido" data-alto="550" aria-pressed="false">Dormido</button>
-            <button type="button" class="opcion-pose" data-pose="cara-osado" data-alto="417" aria-pressed="false">Osado</button>
-            <button type="button" class="opcion-pose" data-pose="cara-asombro" data-alto="467" aria-pressed="false">Asombrado</button>
-            <button type="button" id="boton-celebrar" class="boton boton--primario magnetico">Celebrar</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2.6 Apps -->
-    <section id="apps" class="apps">
-      <div class="contenedor">
-        <h2 class="revelar">Dos apps, un mismo mundo</h2>
-        <div class="apps__rejilla">
-          <article class="app app--estudiante tarjeta-3d revelar">
-            <div class="app__cabecera">
-              <div class="app__icono-marco">
-                <img class="app__icono" src="assets/marca/icono-estudiante.svg" alt="Icono TIUK Estudiante" width="575" height="641" loading="lazy" decoding="async">
+            <div class="battle-stage">
+              <canvas
+                id="battle-canvas"
+                width="760"
+                height="280"
+                aria-label="Tu héroe enfrenta a la Bestia del valle"
+              ></canvas>
+              <div class="enemy-hp">
+                <span>BESTIA DEL VALLE <b id="hp-label">HP 5/5</b></span>
+                <div class="hp-track"><i id="hp-bar"></i></div>
               </div>
-              <span class="app__plataforma">Android</span>
-              <h3>Estudiante</h3>
+              <div
+                class="battle-toast"
+                id="battle-toast"
+                aria-live="polite"
+              ></div>
             </div>
-            <ul class="app__lista" aria-label="Características para estudiantes">
-              <li>
-                <span class="app__check" aria-hidden="true">
-                  <svg class="app__check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-                Camino de islas
-              </li>
-              <li>
-                <span class="app__check" aria-hidden="true">
-                  <svg class="app__check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-                Profe Tuki por voz
-              </li>
-              <li>
-                <span class="app__check" aria-hidden="true">
-                  <svg class="app__check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-                Funciona sin internet
-              </li>
-            </ul>
-            <button type="button" class="boton boton--primario magnetico" id="abrir-descarga">Descargar app estudiante</button>
-            <img class="app__tuki" src="assets/img/tuki-determinado.webp" alt="" width="720" height="720" data-paralaje="-0.1" loading="lazy" decoding="async">
-          </article>
-
-          <article class="app app--docente tarjeta-3d revelar">
-            <div class="app__cabecera">
-              <div class="app__icono-marco">
-                <img class="app__icono" src="assets/marca/icono-docente.svg" alt="Icono TIUK Docente" width="728" height="529" loading="lazy" decoding="async">
+            <div class="exercise-area">
+              <div
+                class="exercise-tabs"
+                role="tablist"
+                aria-label="Tipo de ejercicio"
+              >
+                <button
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="exercise-panel"
+                  id="tab-choice"
+                  data-exercise="choice"
+                >
+                  Opción múltiple</button
+                ><button
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="exercise-panel"
+                  id="tab-complete"
+                  data-exercise="complete"
+                  tabindex="-1"
+                >
+                  Completar</button
+                ><button
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="exercise-panel"
+                  id="tab-order"
+                  data-exercise="order"
+                  tabindex="-1"
+                >
+                  Ordenar
+                </button>
               </div>
-              <span class="app__plataforma">Android y Windows</span>
-              <h3>Docente</h3>
+              <div
+                id="exercise-panel"
+                role="tabpanel"
+                aria-labelledby="tab-choice"
+              ></div>
+              <div class="exercise-footer">
+                <span id="game-feedback" aria-live="polite"
+                  >Una respuesta correcta. Un ataque más cerca.</span
+                ><button id="check-answer" class="game-button">
+                  Comprobar <span>→</span>
+                </button>
+              </div>
             </div>
-            <ul class="app__lista" aria-label="Características para docentes">
-              <li>
-                <span class="app__check" aria-hidden="true">
-                  <svg class="app__check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-                Crea lecciones
-              </li>
-              <li>
-                <span class="app__check" aria-hidden="true">
-                  <svg class="app__check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-                Sigue el progreso
-              </li>
-              <li>
-                <span class="app__check" aria-hidden="true">
-                  <svg class="app__check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-                Comparte por QR
-              </li>
-            </ul>
-            <img class="app__tuki" src="assets/img/ensenando.webp" alt="" width="560" height="515" data-paralaje="-0.1" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="journey-footnote">
+          <span class="status-dot"></span>
+          <p>
+            Estás probando una simulación local con recursos y mecánicas de
+            TIUK. No necesitas una cuenta.
+          </p>
+          <a href="#tuki">¿Y si necesito ayuda? <span>↓</span></a>
+        </div>
+      </section>
+
+      <section class="tuki-section section" id="tuki">
+        <div class="section-heading reveal">
+          <div>
+            <div class="eyebrow">02 / NADIE APRENDE SOLO</div>
+            <h2>
+              La duda aparece.<br /><span class="green"
+                >Tuki se queda contigo.</span
+              >
+            </h2>
+          </div>
+          <p>
+            Preguntar «¿por qué?» debería ser parte del camino. Profe Tuki te
+            acompaña con explicaciones, ejemplos y preguntas que te ayudan a
+            pensar.
+          </p>
+        </div>
+        <div class="tutor-grid">
+          <article class="chat-feature reveal">
+            <div class="feature-intro">
+              <span class="feature-number">A</span>
+              <div>
+                <h3>Una conversación.<br />Ese momento de «¡ah, ya!».</h3>
+                <p>
+                  Pide otra explicación o un ejemplo. El chat mantiene el hilo
+                  para avanzar sobre tu duda.
+                </p>
+              </div>
+            </div>
+            <div class="chat-app">
+              <div class="chat-header">
+                <img
+                  src="assets/img/cara-feliz.webp"
+                  width="46"
+                  height="42"
+                  alt=""
+                />
+                <div>
+                  <strong>Tutor Tuki</strong
+                  ><small id="chat-state"
+                    ><span class="status-dot"></span> Listo para ayudarte</small
+                  >
+                </div>
+                <span class="chat-label">CHAT CON IA</span>
+              </div>
+              <div
+                class="chat-messages"
+                id="chat-messages"
+                role="log"
+                aria-label="Conversación de ejemplo con Tuki"
+              >
+                <div class="message bot">
+                  <small>PROFE TUKI</small>¡Hola! Soy Tuki, tu tutor IA. ¿Qué
+                  descubrimos hoy?
+                </div>
+                <div class="message user">
+                  ¿Cómo doy las gracias en miskito?
+                </div>
+                <div class="message bot">
+                  <small>PROFE TUKI</small>En el corpus de TIUK, «Tingki»
+                  significa «Gracias» y «Tingki pali» significa «Muchas
+                  gracias». ¡Probemos estas palabras!
+                  <div
+                    class="vocabulary-visual"
+                    aria-label="Tingki significa Gracias; Tingki pali significa Muchas gracias"
+                  >
+                    <div><strong>Tingki</strong><span>Gracias</span></div>
+                    <div>
+                      <strong>Tingki pali</strong><span>Muchas gracias</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-suggestions">
+                <button data-chat="ejemplo">Dame un ejemplo</button
+                ><button data-chat="explica">Explícame más</button
+                ><button data-chat="reto">Ponme un reto</button>
+              </div>
+              <form id="chat-form" class="chat-composer">
+                <label class="sr-only" for="chat-input">Pregúntale a Tuki</label
+                ><input
+                  id="chat-input"
+                  maxlength="180"
+                  autocomplete="off"
+                  placeholder="Pregúntale a Tuki…"
+                /><button type="submit" aria-label="Enviar mensaje">↑</button>
+              </form>
+              <small class="simulation-note"
+                >Conversación simulada · Respuestas de demostración, sin
+                conexión a una IA.</small
+              >
+            </div>
+          </article>
+          <article class="live-feature reveal">
+            <div class="feature-intro">
+              <span class="feature-number">B</span>
+              <div>
+                <h3>Habla. Piensa.<br />Responde en Tuki Live.</h3>
+                <p>
+                  Una sesión de voz con preguntas en vivo. Tuki plantea el reto
+                  sin revelar la respuesta.
+                </p>
+              </div>
+            </div>
+            <div class="live-app" id="live-app">
+              <div class="live-top">
+                <span><i class="status-dot"></i> TUKI LIVE</span
+                ><span id="live-timer">00:00</span>
+              </div>
+              <div class="live-avatar">
+                <div class="voice-ring"></div>
+                <div class="voice-ring ring-outer"></div>
+                <img
+                  id="live-tuki"
+                  src="assets/img/tuki-idle.webp"
+                  width="200"
+                  height="200"
+                  alt="Tuki en una sesión Live"
+                />
+                <div class="voice-bars" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i
+                  ><i></i>
+                </div>
+              </div>
+              <span id="live-state" class="live-state"
+                >Tu próxima conversación empieza aquí</span
+              >
+              <div id="live-content" class="live-content">
+                <p>
+                  «Vamos a practicar saludos en miskito e inglés. ¿Te animas?»
+                </p>
+              </div>
+              <button id="live-start" class="button live-button">
+                <span aria-hidden="true">◉</span> Iniciar demo de Tuki Live
+              </button>
+              <small class="simulation-note"
+                >Sesión simulada y silenciosa · En la app, Tuki Live usa voz y
+                conexión a internet.</small
+              >
+            </div>
           </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- 2.7 Empezar (CTA final) -->
-    <section id="empezar" class="final">
-      <div class="final__aura" aria-hidden="true"></div>
-      <img class="final__simbolo" src="assets/marca/simbolo.svg" alt="" width="728" height="529" data-paralaje="0.2" loading="lazy" decoding="async">
-      <div class="contenedor final__contenedor">
-        <img class="final__tuki" src="assets/img/bien-hecho.webp" alt="Tuki felicitándote" width="560" height="545" data-paralaje="-0.25" loading="lazy" decoding="async">
-        <h2 class="revelar">¿Listo para la aventura?</h2>
-        <a class="boton boton--primario boton--grande magnetico" href="#inicio">Volver al inicio</a>
-      </div>
-    </section>
-  </main>
+      <section class="teacher-section section" id="docentes">
+        <div class="teacher-heading reveal">
+          <div class="eyebrow">03 / MÁS TIEMPO PARA ENSEÑAR</div>
+          <h2>
+            Tu próxima clase<br />tiene una
+            <span class="green">gran historia.</span>
+          </h2>
+          <p>
+            Diseñar una lección no debería consumirte la tarde. Dale un tema a
+            TIUK: la IA propone una misión y construye los ejercicios a partir
+            de la trama. Tú revisas, editas y decides qué llega al aula.
+          </p>
+        </div>
+        <div class="teacher-studio reveal">
+          <aside class="studio-sidebar">
+            <img
+              src="assets/marca/wordmark.svg"
+              width="93"
+              height="32"
+              alt="TIUK"
+            /><span class="studio-role">ESPACIO DOCENTE</span>
+            <div class="sidebar-item"><span>▦</span> Mis clases</div>
+            <div class="sidebar-item active"><span>✧</span> Constructor</div>
+            <div class="sidebar-item"><span>◉</span> Radar</div>
+            <div class="sidebar-item"><span>▤</span> Mis corpus</div>
+            <div class="sidebar-bottom">
+              <img
+                src="assets/marca/icono-docente.svg"
+                alt=""
+                width="32"
+                height="32"
+              />
+              <div>
+                <strong>Tu espacio para crear</strong
+                ><small>El docente tiene el control</small>
+              </div>
+            </div>
+          </aside>
+          <div class="studio-main">
+            <div class="studio-top">
+              <span
+                >Constructor <span class="muted">/ Nueva aventura</span></span
+              ><span class="demo-badge">DEMO INTERACTIVA</span>
+            </div>
+            <div class="studio-title">
+              <span class="studio-magic">✧</span>
+              <div>
+                <h3>Aventura Pedagógica</h3>
+                <p>La misión primero. El aprendizaje en cada paso.</p>
+              </div>
+            </div>
+            <div class="generator-layout">
+              <form id="generator-form" class="generator-form">
+                <h4>PARÁMETROS DE LA AVENTURA</h4>
+                <label for="lesson-topic">Tema o contenido a enseñar</label
+                ><select id="lesson-topic">
+                  <option value="saludos">Saludos y despedidas</option>
+                  <option value="cortesia">Palabras de cortesía</option>
+                  <option value="presentaciones">Cómo presentarse</option>
+                </select>
+                <div class="form-row">
+                  <div>
+                    <label for="lesson-grade">Grado</label
+                    ><select id="lesson-grade">
+                      <option>4.º primaria</option>
+                      <option>3.º primaria</option>
+                      <option>5.º primaria</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="lesson-language">Idioma a aprender</label
+                    ><select id="lesson-language">
+                      <option value="mis">Miskito</option>
+                      <option value="en">English</option>
+                    </select>
+                  </div>
+                </div>
+                <label for="lesson-setting">Ambientación de la misión</label
+                ><textarea id="lesson-setting" rows="3" maxlength="180">
+La entrada a un reino se abre con un saludo.</textarea
+                >
+                <div class="generator-info">
+                  ✦ El vocabulario del corpus conecta la historia, el reto y la
+                  batalla.
+                </div>
+                <button
+                  class="button generate-button"
+                  id="generate"
+                  type="submit"
+                >
+                  ✧ Generar aventura <span>↗</span></button
+                ><small class="simulation-note"
+                  >Vista previa simulada · Tres temas de idiomas preparados con
+                  léxico del corpus.</small
+                >
+              </form>
+              <div
+                class="lesson-preview"
+                id="lesson-preview"
+                aria-live="polite"
+              >
+                <div class="preview-empty">
+                  <img
+                    src="assets/img/leyendo.webp"
+                    width="165"
+                    height="165"
+                    alt="Tuki leyendo"
+                  /><span class="preview-label">DE UN TEMA A UNA MISIÓN</span>
+                  <h4>Aquí comienza tu historia.</h4>
+                  <p>
+                    Elige un tema y genera una aventura para ver cómo se
+                    conectan narrativa y ejercicios.
+                  </p>
+                  <div class="preview-path" aria-hidden="true">
+                    <span>✧</span><i></i><span>?</span><i></i><span>⚔</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="teacher-bottom">
+          <span>CREA CON IA</span><i>→</i><span>REVISA Y EDITA</span><i>→</i
+          ><span>ASIGNA A TU CLASE</span>
+          <p>La IA propone. <strong>Tu criterio enseña.</strong></p>
+        </div>
+      </section>
 
-  <!-- 3. Pie -->
-  <footer class="pie">
-    <div class="contenedor">
-      <img class="pie__marca" src="assets/marca/wordmark-negativo.svg" alt="TIUK" width="782" height="269" loading="lazy" decoding="async">
-      <p class="pie__copia">© <span id="anio-actual">2026</span> TIUK</p>
-    </div>
-  </footer>
-  <dialog id="modal-descarga" class="modal" aria-labelledby="modal-titulo">
-    <button type="button" class="modal__cerrar" aria-label="Cerrar">&times;</button>
-    <h2 id="modal-titulo">Descarga TIUK Estudiante</h2>
-    <p>Te enviaremos un código a tu correo para habilitar la descarga.</p>
-    <form id="form-correo">
-      <label for="campo-correo">Correo electrónico</label>
-      <input type="email" id="campo-correo" required autocomplete="email">
-      <button type="submit" class="boton boton--primario">Enviar código</button>
-    </form>
-    <form id="form-codigo" hidden>
-      <label for="campo-codigo">Código de 6 dígitos</label>
-      <input id="campo-codigo" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required autocomplete="one-time-code">
-      <button type="submit" class="boton boton--primario">Verificar y descargar</button>
-      <button type="button" id="reenviar-codigo" class="boton boton--fantasma">Reenviar código</button>
-    </form>
-    <p id="modal-estado" class="modal__estado" role="status" aria-live="polite"></p>
-  </dialog>
-</body>
+      <section class="connected-section section">
+        <div class="connected-art reveal">
+          <div class="connection-orbit"></div>
+          <img
+            class="connection-island"
+            src="assets/game/isla_playa.webp"
+            width="330"
+            height="330"
+            alt="Isla de TIUK"
+          /><img
+            class="connection-tuki"
+            src="assets/img/ensenando.webp"
+            width="220"
+            height="220"
+            loading="lazy"
+            alt="Tuki enseñando"
+          /><span class="language-tag tag-es">Hola <small>ES</small></span
+          ><span class="language-tag tag-en">Hello <small>EN</small></span
+          ><span class="language-tag tag-mi">Naksa <small>MI</small></span>
+        </div>
+        <div class="connected-copy reveal">
+          <div class="eyebrow">EL CONTEXTO TAMBIÉN IMPORTA</div>
+          <h2>El aprendizaje<br />no vive en un solo idioma.</h2>
+          <p>
+            Aprende inglés y miskito desde el español, con un corpus Miskito y
+            pronunciaciones validadas por hablantes nativos. La lengua de una
+            comunidad también merece un lugar en su aventura.
+          </p>
+          <div class="offline-note">
+            <span aria-hidden="true">⌁</span>
+            <div>
+              <strong>¿La conexión va y viene?</strong>
+              <p>
+                Continúa con tus lecciones descargadas. El chat local requiere
+                instalar el modelo de IA; las sesiones de voz en vivo necesitan
+                internet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="film-section section" id="pelicula">
+        <div class="film-header reveal">
+          <div>
+            <div class="eyebrow">UNA PEQUEÑA VENTANA A TIUK</div>
+            <h2>
+              Menos «otra tarea».<br />Más
+              <span class="green">«una misión más».</span>
+            </h2>
+          </div>
+          <div class="film-meta">
+            <span>TIUK EN MOVIMIENTO</span><span>25 SEGUNDOS · SIN AUDIO</span>
+          </div>
+        </div>
+        <div class="film-player reveal">
+          <video
+            id="promo-video"
+            controls
+            muted
+            loop
+            playsinline
+            preload="none"
+            poster="assets/video/tiuk-promo.jpg?v=idiomas-2"
+            aria-label="Video promocional de TIUK, sin audio"
+          >
+            <source
+              src="assets/video/tiuk-promo.mp4?v=idiomas-2"
+              type="video/mp4"
+            />
+            <p>
+              Tu navegador no reproduce este video.
+              <a href="assets/video/tiuk-promo.mp4?v=idiomas-2"
+                >Descargar el video de TIUK</a
+              >.
+            </p>
+          </video>
+          <div class="film-caption">
+            <span>De una pregunta a una aventura.</span
+            ><span>TIUK / PRODUCT FILM <i>↗</i></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-section section" id="empezar">
+        <div class="final-orbit" aria-hidden="true"></div>
+        <img
+          class="final-tuki"
+          src="assets/img/tuki-celebracion.webp"
+          width="230"
+          height="230"
+          alt="Tuki celebrando"
+          loading="lazy"
+        />
+        <div class="eyebrow">LA SIGUIENTE MISIÓN ES TUYA</div>
+        <h2>Hay un mundo<br />por <span class="green">entender.</span></h2>
+        <p>Y una forma distinta de explorarlo.</p>
+        <div class="final-actions">
+          <a class="button" href="#aventura"
+            >Jugar la demostración <span>↗</span></a
+          ><a
+            class="button button-outline"
+            href="https://github.com/Urientropy/Tiuk/releases"
+            target="_blank"
+            rel="noopener"
+            >Explorar TIUK <span>↗</span></a
+          >
+        </div>
+        <small
+          >Para estudiantes curiosos. Para docentes que abren caminos.</small
+        >
+      </section>
+    </main>
+    <footer class="footer">
+      <a href="#inicio" aria-label="Volver al inicio"
+        ><img
+          src="assets/marca/wordmark.svg"
+          width="110"
+          height="38"
+          alt="TIUK"
+      /></a>
+      <p>Aprender nos lleva más lejos.</p>
+      <a
+        href="https://github.com/Urientropy/Tiuk"
+        target="_blank"
+        rel="noopener"
+        >Conoce el proyecto <span>↗</span></a
+      ><span>© <span id="year">2026</span> TIUK</span
+      ><button id="motion-toggle" class="motion-toggle" aria-pressed="false">
+        Pausar movimiento <span>Ⅱ</span>
+      </button>
+    </footer>
+    <div id="celebration" class="celebration" aria-hidden="true"></div>
+  </body>
 </html>

@@ -1,0 +1,63 @@
+name: Publicar landing en GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Comprobar disponibilidad de GitHub Pages
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api "repos/${GITHUB_REPOSITORY}/pages" > /dev/null 2>&1; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::GitHub Pages no está habilitado. Actívalo en Settings > Pages cuando el plan y la visibilidad del repositorio lo permitan."
+          fi
+
+      - name: Obtener código
+        if: steps.pages.outputs.enabled == 'true'
+        uses: actions/checkout@v6
+
+      - name: Configurar Pages
+        if: steps.pages.outputs.enabled == 'true'
+        uses: actions/configure-pages@v5
+
+      - name: Preparar sitio estático
+        if: steps.pages.outputs.enabled == 'true'
+        run: |
+          node --check js/battle.js
+          node --check js/idiomas.js
+          node --check js/principal.js
+          mkdir -p _site
+          cp index.html .nojekyll _site/
+          cp -R assets css js _site/
+
+      - name: Subir sitio
+        if: steps.pages.outputs.enabled == 'true'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - name: Publicar
+        if: steps.pages.outputs.enabled == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4

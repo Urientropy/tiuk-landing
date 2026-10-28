@@ -1,0 +1,46 @@
+{
+  "fuente": "Urientropy/TIUK-All/backend/scripts/seed_miskito.py",
+  "uso": "Entradas usadas por las demos; sin generación de vocabulario ni audio.",
+  "entradas": [
+    {
+      "termino": "Naksa",
+      "traduccion": "Hola / ¿Cómo estás?",
+      "categoria": "saludos"
+    },
+    {
+      "termino": "Yamni sa",
+      "traduccion": "Estoy bien / Bien",
+      "categoria": "saludos"
+    },
+    {
+      "termino": "Yua yamni",
+      "traduccion": "Buenos días",
+      "categoria": "saludos"
+    },
+    {
+      "termino": "Tihmia yamni",
+      "traduccion": "Buenas noches",
+      "categoria": "saludos"
+    },
+    {
+      "termino": "Kaisina",
+      "traduccion": "Adiós / Nos vemos",
+      "categoria": "saludos"
+    },
+    {
+      "termino": "Man nini ya?",
+      "traduccion": "¿Cómo te llamas?",
+      "categoria": "saludos"
+    },
+    {
+      "termino": "Tingki",
+      "traduccion": "Gracias",
+      "categoria": "saludos"
+    },
+    {
+      "termino": "Tingki pali",
+      "traduccion": "Muchas gracias",
+      "categoria": "saludos"
+    }
+  ]
+}

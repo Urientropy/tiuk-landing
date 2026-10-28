@@ -1,89 +1,75 @@
-# TIUK — Landing page
+# TIUK — Un mundo por entender
 
-Landing page oficial de presentación para **TIUK**, la plataforma educativa gamificada que convierte cualquier asignatura escolar en una aventura interactiva estilo RPG. Los estudiantes exploran islas de conocimiento, superan desafíos pedagógicos y aprenden de la mano de **Profe Tuki**, un tutor carismático con voz que funciona plenamente sin conexión a internet y en tres idiomas: Español, English y Miskito.
+Landing estática en español, rediseñada con fondo claro, verde bosque, superficies menta y recursos originales de TIUK. No necesita compilación ni backend.
 
-🌐 **Demo en vivo:** [https://urientropy.github.io/tiuk-landing/](https://urientropy.github.io/tiuk-landing/)
-
----
-
-## 📁 Estructura del proyecto
-
-```text
-tiuk-landing/
-├── .nojekyll              # Configuración para despliegue estático en GitHub Pages
-├── README.md              # Documentación del proyecto
-├── index.html             # Estructura semántica accesible de la landing
-├── css/
-│   └── estilos.css        # Estilos mobile-first con la identidad visual de TIUK
-├── js/
-│   └── principal.js       # Lógica vanilla JS: animador de Tuki, menú, scroll y galería
-└── assets/
-    ├── img/               # Poses y frames de animación WebP optimizados de Tuki
-    └── marca/             # Logos oficiales (wordmark, símbolo e iconos de las apps)
-```
-
----
-
-## 🎨 Identidad visual
-
-- **Paleta de colores:** Azul noche (`#0F172A`, fondo), pizarra (`#1E293B`, superficies), turquesa (`#2DD4BF`, acento), verde vital (`#32CD32`, acción principal), esmeralda (`#10B981`), mango (`#FFB02A`, XP y premios).
-- **Tipografías:** Nunito (títulos) e Inter (texto).
-- **Componentes:** Tarjetas con sombras suaves y brillos, botones de juego con repisa 3D.
-- **Archivos de `assets/marca/`:** `wordmark-negativo.svg` (fondos oscuros), `wordmark.svg` (fondos claros), `simbolo.svg` (símbolo y favicon), `icono-estudiante.svg` e `icono-docente.svg`, tomados del paquete `ui_core` de la app.
-
----
-
-## 🚀 Cómo verla en local
-
-Para ejecutar la landing localmente no se requieren herramientas de compilación complejas ni dependencias de terceros; cualquier servidor web estático local es suficiente:
+## Ver en local
 
 ```bash
-# Navegar a la raíz del proyecto
-cd tiuk-landing
-
-# Levantar un servidor HTTP con Python 3
 python3 -m http.server 8000
 ```
 
-Luego abre en tu navegador preferido:
-👉 [http://localhost:8000](http://localhost:8000)
+Abre `http://localhost:8000`. Sirve `index.html`, `css/`, `js/` y `assets/` directamente con GitHub Pages. Este trabajo local no publica ni modifica los repositorios de referencia.
 
----
+## Demos interactivas
 
-## 🐸 Animaciones de Tuki (Animación por frames)
+- Islas con parallax por scroll y puntero. Tuki parpadea, habla y celebra usando sus frames originales.
+- Batalla con héroe y Bestia del Valle: ataques, HP, vidas, XP, explicaciones, victoria, derrota y reinicio.
+- Preguntas de opción múltiple, completar y ordenar. Pestañas accesibles con flechas, Inicio y Fin.
+- Chat con escritura progresiva, sugerencias y respuestas preparadas sobre saludos, cortesía y presentación en inglés y miskito.
+- Tuki Live: sesión silenciosa con estados, contador, preguntas y feedback; permite terminar y repetir.
+- Constructor docente con tres temas, grado, idioma a aprender Miskito/English y ambientación. Vista previa de narrativa, pregunta y batalla, edición e inserción simulada.
+- Video promocional de 25 segundos, 1920×1080, 30 fps, sin audio, con controles y póster.
 
-La expresividad de Tuki cobra vida mediante una técnica ligera y eficiente de **intercambio dinámico de frames precargados** en formato WebP:
+Las demos son recreaciones locales con contenido educativo de ejemplo, identificadas como simulaciones. No ejecutan las apps Flutter, no conectan con una IA ni solicitan micrófono. Los textos reflejan las condiciones reales: lecciones descargadas, modelo instalado para chat local y conexión para voz en vivo.
 
-1. **Precarga proactiva:** Al cargar el script diferido, se inicializan instancias en memoria de `new Image()` con todos los frames del héroe y las poses de la galería. De esta forma, el navegador almacena en caché los assets y los cambios de `src` ocurren al instante sin parpadeos blancos.
-2. **Reposo y parpadeo natural (`idle` / `blink`):** En reposo, Tuki parpadea a intervalos semialeatorios (entre 2.2 s y 4.5 s) durante 140 ms, con una probabilidad del 20% de ejecutar un doble parpadeo más expresivo.
-3. **Habla sincronizada con texto (`hablando` / `hablando-boca-cerrada`):**
-   - El globo de diálogo escribe los mensajes mediante un efecto máquina de escribir (~35 ms por carácter, utilizando `Array.from` para respetar secuencias de emojis compuestas).
-   - La boca de Tuki alterna entre abierta y cerrada (~110–150 ms) únicamente al pronunciar palabras o caracteres alfanuméricos, deteniéndose con boca cerrada al procesar espacios y signos de puntuación.
-   - Si parpadea mientras habla, utiliza variantes contextuales específicas (`hablando-blink` y `hablando-blink-boca-cerrada`).
-   - Al finalizar cada frase, mantiene la boca cerrada 300 ms antes de regresar al estado de reposo.
-4. **Celebración y estados adicionales (`celebracion` / `pensando`):**
-   - Al hacer clic o presionar la imagen de Tuki, ejecuta un salto de celebración por 900 ms con feedback visual y felicitación en su globo.
-   - En el guion automático que corre cuando la sección y la pestaña están activas, Tuki reflexiona brevemente en pose pensativa antes de ciertas frases.
+## Referencias
 
----
+Se consultaron `Urientropy/Tiuk` y `Urientropy/TIUK-All`. Flujos y recursos provienen de:
 
-## ♿ Accesibilidad y `prefers-reduced-motion`
+| Experiencia | Ruta en el monorepo Tiuk |
+| --- | --- |
+| Escenario, HP y sprites | `frontend/packages/ui_core/lib/widgets/teatro_rpg.dart` y `lib/flame/` |
+| Ejercicios | `frontend/packages/ui_core/lib/widgets/ejercicio/` |
+| Tutor y Live | `frontend/apps/estudiante/lib/features/tutor/` |
+| Constructor | `frontend/apps/docente/lib/features/constructor/widgets/dialogo_generar_aventura_desktop.dart` |
+| Marca y gráficos | `frontend/packages/ui_core/assets/` |
 
-La landing cumple con principios de diseño universal y accesibilidad web:
+## Video: Brag + HyperFrames
 
-- **Reducción de movimiento (`prefers-reduced-motion: reduce`):**
-  - Se desactiva el parpadeo automático y la alternancia de boca.
-  - El texto de la burbuja se renderiza por completo de inmediato sin efecto máquina de escribir.
-  - Se omiten las explosiones de confeti en la galería y las animaciones de flotación continua.
-  - Los elementos con efecto de revelado por scroll (`.revelar`) se muestran inmediatamente al 100% de opacidad y posición final.
-  - Los cambios de poses e imágenes siguen funcionando de forma estática y directa.
-- **Navegación por teclado y lectores de pantalla:**
-  - Tuki cuenta con atributos `role="button"`, `tabindex="0"`, etiquetas ARIA descriptivas (`aria-label`, `aria-live="polite"`, `aria-pressed`, `aria-expanded`) y control mediante teclas <kbd>Enter</kbd> y <kbd>Espacio</kbd>.
-  - El menú móvil se cierra con la tecla <kbd>Escape</kbd>, devolviendo el foco de manera accesible al botón disparador.
+Se siguió [latent-spaces/brag](https://github.com/latent-spaces/brag) con música, SFX y narración desactivados. `brag-output/` contiene el plan, brief, texto para compartir, MP4, póster y composición editable.
 
----
+Para modificar el video, edita `brag-output/composition/source/index.template`, `film.css` y `film.js`:
 
-## 🎨 Créditos y derechos de autor
+```bash
+cd brag-output/composition
+python3 build-composition.py
+npm run check
+npx hyperframes preview --background
+npm run render -- --quality delivery --fps 30 --output ../brag.mp4
+```
 
-- **Mascota Tuki:** © TIUK. Todos los derechos reservados.
-- **Diseño y desarrollo:** Equipo de desarrollo de TIUK.
+La composición usa fuentes y assets locales y un timeline GSAP determinista. El CLI está fijado en `package.json`. La copia para la web y su póster están en `assets/video/`. Brag y HyperFrames no son necesarios para servir la landing.
+
+## Accesibilidad y rendimiento
+
+Navegación semántica, formularios etiquetados y foco visible. Se respeta `prefers-reduced-motion` y se puede pausar el movimiento. El canvas no dibuja fuera de vista ni con la pestaña oculta. Fuentes locales, islas WebP y sprites PNG. Video sin autoplay, con `preload="none"`, pausado al salir de vista. Los mensajes del visitante se renderizan como texto, sin interpretar HTML.
+
+## Verificación
+
+```bash
+node --check js/principal.js
+node --check js/battle.js
+python3 scripts/verify.py
+```
+
+`docs/VERIFICACION.md` documenta los flujos comprobados en navegador y las condiciones de las demos.
+
+Mascota, marca y gráficos: © TIUK. Nunito y DM Sans: SIL Open Font License, incluida en `assets/fonts/`.
+
+El léxico miskito está documentado en `docs/LEXICO-DEMO.md`. El fondo de combate generado, su prompt y las coordenadas de apoyo se documentan en `docs/ARENA-IMAGEN.md`.
+
+## GitHub Pages
+
+El workflow `.github/workflows/pages.yml` publica `index.html`, `css/`, `js/` y `assets/` cuando se actualiza `main`. También se puede ejecutar manualmente. La documentación, el proyecto editable del video y el servicio antiguo de descargas no forman parte del sitio publicado.
+
+Pages debe estar habilitado con GitHub Actions como origen. Si GitHub no permite activarlo por el plan o la visibilidad del repositorio, el workflow informa que está pendiente y omite la publicación. Tras habilitar Pages, basta con ejecutar el workflow manualmente o hacer un nuevo push.

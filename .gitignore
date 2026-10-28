@@ -1,3 +1,11 @@
 *.apk
 __pycache__/
 .pytest_cache/
+
+# Herramientas y evidencia local del video
+node_modules/
+.hyperframes/
+.thumbnails/
+brag-output/work-*/
+brag-output/composition/check-result.json
+brag-output/composition/*.log
